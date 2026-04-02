@@ -73,7 +73,7 @@ Eligent-ai/
 
 ## Customization
 
-- Update social links in `Contact.tsx` and `Footer.tsx`
+- Update social link in `Contact.tsx` and `Footer.tsx`
 - Swap placeholder screenshots in `Projects.tsx` when ready
-- Add real email form handler in `Contact.tsx` (currently simulated)
+- Add real email form handler in `Contact.tsx` (currently simulated).
 - Update SEO metadata in `app/layout.tsx`
