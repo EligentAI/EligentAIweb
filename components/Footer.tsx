@@ -21,13 +21,13 @@ export default function Footer() {
   };
 
   const socials = [
-    { href: "https://github.com/Sdkhan01", Icon: Github, label: "GitHub" },
+    { href: "https://github.com/EligentAI", Icon: Github, label: "GitHub" },
     { href: "https://www.linkedin.com/in/shadab-khan-88a632264", Icon: Linkedin, label: "LinkedIn" },
     { href: "https://twitter.com/eligentai", Icon: Twitter, label: "X (Twitter)" },
     { href: "https://instagram.com/eligentai", Icon: Instagram, label: "Instagram" },
     { href: "https://youtube.com/@eligentai", Icon: Youtube, label: "YouTube" },
-    { href: "https://wa.me/911234567890", Icon: MessageCircle, label: "WhatsApp" },
-    { href: "mailto:shadabkhanntab@gmail.com", Icon: Mail, label: "shadabkhanntab@gmail.com" },
+    { href: "https://wa.me/+918188887958", Icon: MessageCircle, label: "WhatsApp" },
+    { href: "mailto:contact.eligentai@gmail.com", Icon: Mail, label: "contact.EligentAI@gmail.com" },
   ];
 
   return (
