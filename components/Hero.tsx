@@ -82,7 +82,7 @@ export default function Hero() {
         <motion.div initial="hidden" animate="visible" custom={0.45} variants={fadeUp}
           className="mt-16 grid grid-cols-3 gap-px max-w-sm mx-auto">
           {[
-            { value: "5+", label: t.hero.stat1Label },
+            { value: "2+", label: t.hero.stat1Label },
             { value: "9+", label: t.hero.stat2Label },
             { value: "100%", label: t.hero.stat3Label },
           ].map((s) => (

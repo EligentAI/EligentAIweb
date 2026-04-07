@@ -26,16 +26,14 @@ export const translations: Record<Locale, Record<string, any>> = {
       sub: "We build intelligent AI systems that help companies analyze data, automate workflows and unlock insights.",
       cta1: "View Projects",
       cta2: "Contact Us",
-      stat1Label: "AI Systems Built",
+      stat1Label: "Production Systems",
       stat2Label: "Technologies",
-      stat3Label: "Focus",
-      scrollLabel: "Explore",
+      stat3Label: "End-to-End Delivery",
     },
     services: {
       sectionLabel: "What We Build",
       title: "AI Systems We Build",
       sub: "Focused engineering on intelligent systems that connect AI reasoning with real business data.",
-      learnMore: "Learn more",
       items: [
         {
           title: "AI Analytics Dashboards",
@@ -179,7 +177,7 @@ export const translations: Record<Locale, Record<string, any>> = {
     about: {
       sectionLabel: "Who We Are",
       title: "About Eligent AI",
-      body1: "Eligent AI is a small AI engineering studio focused on building intelligent systems for modern businesses.",
+      body1: "Eligent AI is a specialized AI engineering studio focused on building intelligent systems for modern businesses.",
       body2Prefix: "We specialize in",
       body2Items: ["AI agents", "RAG systems", "data analytics automation", "AI-powered knowledge assistants"],
       body2Connector: "and",

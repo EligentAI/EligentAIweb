@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Send, Github, Linkedin, CheckCircle, Loader2 } from "lucide-react";
 import { useLanguage } from "@/lib/language-provider";
 
-const GITHUB_URL = "https://github.com/Sdkhan01";
+const GITHUB_URL = "https://github.com/EligentAI";
 const LINKEDIN_URL = "https://www.linkedin.com/in/shadab-khan-88a632264";
 const WEB3FORMS_KEY = "ea1957d7-34f0-4f27-8052-3b7f1d637fe9";
 
@@ -72,7 +72,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-3">
               {[
-                { href: GITHUB_URL, Icon: Github, label: "GitHub", sub: "github.com/Sdkhan01", hoverColor: "#16A34A" },
+                { href: GITHUB_URL, Icon: Github, label: "GitHub", sub: "github.com/EligentAI", hoverColor: "#16A34A" },
                 { href: LINKEDIN_URL, Icon: Linkedin, label: "LinkedIn", sub: "linkedin.com/in/shadab-khan-88a632264", hoverColor: "#4D6EFF" },
               ].map(({ href, Icon, label, sub, hoverColor }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
