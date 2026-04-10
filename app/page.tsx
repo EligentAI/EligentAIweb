@@ -6,6 +6,7 @@ import CaseStudies from "@/components/CaseStudies";
 import Technology from "@/components/Technology";
 import Process from "@/components/Process";
 import About from "@/components/About";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Technology />
       <Process />
       <About />
+      <FAQ />
       <Contact />
       <Footer />
     </main>
