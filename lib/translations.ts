@@ -112,7 +112,7 @@ export const translations: Record<Locale, Record<string, any>> = {
             "A natural language interface connected to a PostgreSQL analytics database. Users type questions in plain English — the AI generates SQL, runs the query, and returns charts and written insights automatically.",
             "LangChain SQL agent with OpenAI GPT-4 for query generation. Streamlit frontend for the chat interface. Plotly for dynamic chart rendering. Neon Database for scalable serverless PostgreSQL.",
             "Python · LangChain · OpenAI API (GPT-4) · PostgreSQL · Neon Database · Plotly · Streamlit",
-            "Non-technical team members can now self-serve data queries without engineering support. Reports that previously required manual work are generated in seconds through conversational queries.",
+            "Non-technical teams now query live business data in seconds — no SQL, no analyst dependency. What took 30+ minutes of manual reporting is fully automated, freeing the data team to focus on strategy instead of repetitive requests.",
           ],
         },
         {
@@ -121,7 +121,7 @@ export const translations: Record<Locale, Record<string, any>> = {
             "A unified AI assistant combining RAG for unstructured documents and a SQL agent for structured data. Team members ask questions and receive accurate, sourced answers and auto-generated reports.",
             "RAG pipeline with vector embeddings for document retrieval. LangChain agents orchestrate between document search and database queries. Role-based permissions control data access per user.",
             "Python · LangChain · OpenAI API · PostgreSQL · Neon Database · RAG Architecture · Streamlit",
-            "Teams retrieve information and generate reports through conversation instead of manual search. Knowledge silos are broken down through a single unified AI interface with appropriate access controls.",
+            "Instead of switching between tools and documents, teams now interact with a single AI system that understands both knowledge and data - turning scattered information into an accessible, reliable decision layer.",
           ],
         },
       ],

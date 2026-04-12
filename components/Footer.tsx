@@ -1,6 +1,8 @@
 "use client";
 
-import { Github, Linkedin, Mail, ArrowUp, Twitter, Instagram, Youtube, MessageCircle, MapPin, Clock, Zap } from "lucide-react";
+import { Mail, ArrowUp, MapPin, Clock, Zap } from "lucide-react";
+import { FaGithub, FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { useLanguage } from "@/lib/language-provider";
 
 export default function Footer() {
@@ -32,23 +34,35 @@ export default function Footer() {
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
-              <a href="https://github.com/EligentAI" target="_blank" rel="noopener noreferrer" title="GitHub" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <Github size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://github.com/EligentAI" target="_blank" rel="noopener noreferrer" title="GitHub"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaGithub size={20} color="#24292e" />
               </a>
-              <a href="https://www.linkedin.com/in/shadab-khan-88a632264" target="_blank" rel="noopener noreferrer" title="LinkedIn" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <Linkedin size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://www.linkedin.com/in/shadab-khan-88a632264" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaLinkedin size={20} color="#0A66C2" />
               </a>
-              <a href="https://twitter.com/eligentai" target="_blank" rel="noopener noreferrer" title="X (Twitter)" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <Twitter size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://twitter.com/eligentai" target="_blank" rel="noopener noreferrer" title="X (Twitter)"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaXTwitter size={20} color="#000000" />
               </a>
-              <a href="https://instagram.com/eligentai" target="_blank" rel="noopener noreferrer" title="Instagram" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <Instagram size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://instagram.com/eligentai" target="_blank" rel="noopener noreferrer" title="Instagram"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaInstagram size={20} color="#E1306C" />
               </a>
-              <a href="https://youtube.com/@eligentai" target="_blank" rel="noopener noreferrer" title="YouTube" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <Youtube size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://youtube.com/@eligentai" target="_blank" rel="noopener noreferrer" title="YouTube"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaYoutube size={20} color="#FF0000" />
               </a>
-              <a href="https://wa.me/+918188887958" target="_blank" rel="noopener noreferrer" title="WhatsApp" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <MessageCircle size={20} style={{ color: "var(--color-text-secondary)" }} />
+              <a href="https://wa.me/918188887958" target="_blank" rel="noopener noreferrer" title="WhatsApp"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <FaWhatsapp size={20} color="#25D366" />
               </a>
             </div>
           </div>
@@ -91,7 +105,7 @@ export default function Footer() {
                 <div>
                   <p className="text-[14px] font-medium mb-0.5" style={{ color: "var(--color-text-primary)" }}>Availability</p>
                   <p className="text-[13px]" style={{ color: "var(--color-text-secondary)" }}>
-                    Open for freelance projects<br />Startups &amp; enterprises welcome
+                    2 project slots open for Q2 2026<br />Small businesses · Startups · Enterprises
                   </p>
                 </div>
               </div>
@@ -109,19 +123,19 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(22,163,74,0.10)", border: "1px solid rgba(22,163,74,0.22)" }}>
                   <Mail size={18} style={{ color: "var(--color-mint)" }} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-[13px] uppercase tracking-wide mb-0.5" style={{ color: "var(--color-text-muted)" }}>Email</p>
-                  <p className="text-[14px] font-medium" style={{ color: "var(--color-text-primary)" }}>contact.eligentai@gmail.com</p>
+                  <p className="text-[14px] font-medium break-all" style={{ color: "var(--color-text-primary)" }}>contact.eligentai@gmail.com</p>
                 </div>
               </a>
 
-              <a href="https://wa.me/+918188887958" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(74,222,128,0.10)", border: "1px solid rgba(74,222,128,0.22)" }}>
-                  <MessageCircle size={18} style={{ color: "#4ADE80" }} />
+              <a href="https://wa.me/918188887958" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(37,211,102,0.10)", border: "1px solid rgba(37,211,102,0.22)" }}>
+                  <FaWhatsapp size={18} color="#25D366" />
                 </div>
                 <div>
-                  <p className="text-[14px] uppercase tracking-wide mb-0.5" style={{ color: "var(--color-text-muted)" }}>WhatsApp</p>
-                  <p className="text-[13px] font-medium" style={{ color: "var(--color-text-primary)" }}></p>
+                  <p className="text-[13px] uppercase tracking-wide mb-0.5" style={{ color: "var(--color-text-muted)" }}>WhatsApp</p>
+                  <p className="text-[13px] font-medium" style={{ color: "var(--color-text-primary)" }}>Click to chat</p>
                 </div>
               </a>
 

@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "How much does a project cost?",
-    a: "Pricing depends on scope and complexity. Prototype builds start from $500. Production systems with custom frontend and deployment typically range from $1,500 to $5,000. We provide a fixed-price quote after a free 30-minute consultation — no surprise invoices.",
+    a: "Pricing depends on the scope and complexity of the system. We offer everything from focused pilot builds to full production systems with custom frontend and deployment.We provide a fixed-price quote after a free 30-minute consultation — no hourly billing, no surprise invoices.",
     accent: "#7B9FFF",
     dim: "rgba(77,110,255,0.08)",
     border: "rgba(77,110,255,0.20)",

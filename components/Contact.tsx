@@ -2,22 +2,61 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Github, Linkedin, CheckCircle, Loader2, Clock, MessageSquare, Calendar } from "lucide-react";
+import { Send, CheckCircle, Loader2, Clock, MessageSquare, Calendar } from "lucide-react";
 import { useLanguage } from "@/lib/language-provider";
 
-const GITHUB_URL = "https://github.com/EligentAI";
-const LINKEDIN_URL = "https://www.linkedin.com/in/shadab-khan-88a632264";
 const CALENDLY_URL = "https://calendly.com/shadabkhaantab/30min";
 const WEB3FORMS_KEY = "ea1957d7-34f0-4f27-8052-3b7f1d637fe9";
 
 type Status = "idle" | "loading" | "success" | "error";
 
+const nextSteps = [
+  { number: "01", text: "We review your project", sub: "Within 12 hours of receiving your message" },
+  { number: "02", text: "We schedule a free call", sub: "No obligation — just an honest conversation" },
+  { number: "03", text: "We send a proposal", sub: "Clear scope, timeline & delivery plan" },
+];
+
+const projectTypes = [
+  "Not sure yet",
+  "AI Chatbot / Copilot",
+  "Data Dashboard / Analytics",
+  "Multi-Agent System",
+  "Automation / Workflow",
+  "Custom App with AI",
+];
+
+const budgetOptions = [
+  "Not sure yet",
+  "Under $500 (pilot / quick build)",
+  "$500 – $1,500",
+  "$1,500 – $5,000",
+  "$5,000+",
+];
+
+const inputStyle: React.CSSProperties = {
+  background: "var(--color-input-bg)",
+  border: "1px solid #e2e8f0",
+  color: "var(--color-text-primary)",
+  outline: "none",
+  width: "100%",
+  borderRadius: "0.75rem",
+  padding: "0.75rem 1rem",
+  fontSize: "14px",
+  transition: "border-color 0.2s",
+};
+
 export default function Contact() {
   const { t } = useLanguage();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    projectType: "Not sure yet",
+    budget: "Not sure yet",
+    message: "",
+  });
   const [status, setStatus] = useState<Status>("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -32,8 +71,10 @@ export default function Contact() {
           access_key: WEB3FORMS_KEY,
           name: form.name,
           email: form.email,
+          project_type: form.projectType,
+          budget: form.budget,
           message: form.message,
-          subject: "New message from Eligent AI Portfolio",
+          subject: `New project inquiry from ${form.name} — ${form.projectType}`,
         }),
       });
       const data = await res.json();
@@ -68,7 +109,7 @@ export default function Contact() {
             <p className="text-[16px] leading-relaxed mb-8" style={{ color: "var(--color-text-secondary)" }}>{t.contact.sub}</p>
 
             {/* Trust signals */}
-            <div className="flex flex-col gap-3 mb-8">
+            <div className="flex flex-col gap-3 mb-6">
               <div className="flex items-center gap-4 p-4 rounded-2xl" style={{ background: "rgba(22,163,74,0.08)", border: "1px solid rgba(22,163,74,0.22)" }}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--color-surface)", border: "1px solid rgba(22,163,74,0.22)" }}>
                   <Clock size={16} style={{ color: "#16A34A" }} />
@@ -98,27 +139,56 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Social links */}
-            <div className="flex flex-col gap-3">
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-4 glass-card rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "var(--color-input-bg)", border: "1px solid var(--color-border)" }}>
-                  <Github size={18} style={{ color: "var(--color-text-secondary)" }} />
-                </div>
-                <div>
-                  <p className="font-medium text-[14px]" style={{ color: "var(--color-text-primary)" }}>GitHub</p>
-                  <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>github.com/EligentAI</p>
-                </div>
-              </a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-4 glass-card rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "var(--color-input-bg)", border: "1px solid var(--color-border)" }}>
-                  <Linkedin size={18} style={{ color: "var(--color-text-secondary)" }} />
-                </div>
-                <div>
-                  <p className="font-medium text-[14px]" style={{ color: "var(--color-text-primary)" }}>LinkedIn</p>
-                  <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>linkedin.com/in/shadab-khan</p>
-                </div>
-              </a>
-            </div>
+            {/* Availability status card */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex items-center gap-4 p-4 rounded-2xl mb-4"
+              style={{ background: "rgba(22,163,74,0.06)", border: "1px solid rgba(22,163,74,0.25)" }}
+            >
+              <div className="relative flex-shrink-0">
+                <span className="block w-3 h-3 rounded-full" style={{ background: "#16A34A" }} />
+                <span className="absolute inset-0 rounded-full animate-ping" style={{ background: "rgba(22,163,74,0.5)" }} />
+              </div>
+              <div>
+                <p className="font-semibold text-[14px]" style={{ color: "#16A34A" }}>Now Accepting New Projects</p>
+                <p className="text-[12px] mt-0.5" style={{ color: "var(--color-text-muted)" }}>
+                  2 project slots open for Q2 2026 · Small businesses · Startups · Enterprises
+                </p>
+              </div>
+            </motion.div>
+
+            {/* What happens next */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="p-4 rounded-2xl"
+              style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}
+            >
+              <p className="text-[12px] font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--color-text-muted)" }}>
+                What happens next?
+              </p>
+              <div className="flex flex-col gap-3">
+                {nextSteps.map((step, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span
+                      className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-[11px] font-bold font-syne"
+                      style={{ background: "rgba(22,163,74,0.10)", border: "1px solid rgba(22,163,74,0.22)", color: "#16A34A" }}
+                    >
+                      {step.number}
+                    </span>
+                    <div>
+                      <p className="text-[13px] font-medium" style={{ color: "var(--color-text-primary)" }}>{step.text}</p>
+                      <p className="text-[11.5px]" style={{ color: "var(--color-text-muted)" }}>{step.sub}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
           </motion.div>
 
@@ -136,7 +206,7 @@ export default function Contact() {
                   <div className="px-4 py-2 rounded-xl text-[12px] font-medium" style={{ background: "rgba(22,163,74,0.10)", border: "1px solid rgba(22,163,74,0.22)", color: "var(--color-mint)" }}>
                     ⚡ We will respond within 12 hours
                   </div>
-                  <button onClick={() => { setStatus("idle"); setForm({ name: "", email: "", message: "" }); }} className="mt-2 text-[13px] transition-colors underline underline-offset-2" style={{ color: "var(--color-mint)" }}>
+                  <button onClick={() => { setStatus("idle"); setForm({ name: "", email: "", projectType: "Not sure yet", budget: "Not sure yet", message: "" }); }} className="mt-2 text-[13px] transition-colors underline underline-offset-2" style={{ color: "var(--color-mint)" }}>
                     {t.contact.sendAnother}
                   </button>
                 </motion.div>
@@ -148,19 +218,60 @@ export default function Contact() {
                     <p className="text-[13px]" style={{ color: "var(--color-text-muted)" }}>Describe your project and we will get back to you within 12 hours.</p>
                   </div>
 
+                  {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-[12px] font-medium mb-2 tracking-wide" style={{ color: "var(--color-text-secondary)" }}>{t.contact.nameLabel}</label>
-                    <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder={t.contact.namePlaceholder} className="input-field w-full px-4 py-3 rounded-xl text-[14px]" />
+                    <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder={t.contact.namePlaceholder} style={inputStyle} className="input-field" />
                   </div>
 
+                  {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-[12px] font-medium mb-2 tracking-wide" style={{ color: "var(--color-text-secondary)" }}>{t.contact.emailLabel}</label>
-                    <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder={t.contact.emailPlaceholder} className="input-field w-full px-4 py-3 rounded-xl text-[14px]" />
+                    <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder={t.contact.emailPlaceholder} style={inputStyle} className="input-field" />
                   </div>
 
+                  {/* Project Type + Budget side by side */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="projectType" className="block text-[12px] font-medium mb-2 tracking-wide" style={{ color: "var(--color-text-secondary)" }}>
+                        Project Type
+                      </label>
+                      <select
+                        id="projectType"
+                        name="projectType"
+                        value={form.projectType}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        className="input-field"
+                      >
+                        {projectTypes.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="budget" className="block text-[12px] font-medium mb-2 tracking-wide" style={{ color: "var(--color-text-secondary)" }}>
+                        Estimated Budget <span style={{ color: "var(--color-text-muted)" }}>(optional)</span>
+                      </label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        value={form.budget}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        className="input-field"
+                      >
+                        {budgetOptions.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-[12px] font-medium mb-2 tracking-wide" style={{ color: "var(--color-text-secondary)" }}>{t.contact.messageLabel}</label>
-                    <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange} placeholder={t.contact.messagePlaceholder} className="input-field w-full px-4 py-3 rounded-xl text-[14px] resize-none" />
+                    <textarea id="message" name="message" required rows={4} value={form.message} onChange={handleChange} placeholder={t.contact.messagePlaceholder} style={{ ...inputStyle, resize: "none" }} className="input-field" />
                   </div>
 
                   <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-[12px] font-medium" style={{ background: "rgba(22,163,74,0.08)", border: "1px solid rgba(22,163,74,0.20)", color: "var(--color-mint)" }}>
