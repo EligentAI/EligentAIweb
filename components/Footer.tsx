@@ -146,7 +146,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="pt-6 pb-24 sm:pb-6 sm:pr-24 2xl:pr-0 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid var(--color-border)" }}>
           <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
-            © {new Date().getFullYear()} Eligent AI. All rights reserved. Built with ❤️ in India.
+            © {new Date().getFullYear()} EligentAI · eligentai.com · All rights reserved. Built with ❤️ in India.
           </p>
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-2 text-[12px] transition-colors hover:text-mint group" style={{ color: "var(--color-text-muted)" }}>
             Back to top
