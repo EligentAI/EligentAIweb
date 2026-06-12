@@ -114,13 +114,13 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-4">
-              <a href="mailto:contact.eligentai@gmail.com" className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
+              <a href="mailto:contact@eligentai.com" className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(22,163,74,0.10)", border: "1px solid rgba(22,163,74,0.22)" }}>
                   <Mail size={18} style={{ color: "var(--color-mint)" }} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-[13px] uppercase tracking-wide mb-0.5" style={{ color: "var(--color-text-muted)" }}>Email</p>
-                  <p className="text-[14px] font-medium break-all" style={{ color: "var(--color-text-primary)" }}>contact.eligentai@gmail.com</p>
+                  <p className="text-[14px] font-medium break-all" style={{ color: "var(--color-text-primary)" }}>contact@eligentai.com</p>
                 </div>
               </a>
 

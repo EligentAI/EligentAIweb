@@ -93,7 +93,7 @@ const structuredData = {
       alternateName: ["EligentAI", "eligentai", "Eligent"],
       url: SITE_URL,
       logo: `${SITE_URL}/logo2.png`,
-      email: "contact.eligentai@gmail.com",
+      email: "contact@eligentai.com",
       description:
         "AI engineering studio building production AI systems: WhatsApp AI receptionists, customer support automation, analytics copilots, and custom AI agents.",
       founder: {
@@ -110,7 +110,7 @@ const structuredData = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
-        email: "contact.eligentai@gmail.com",
+        email: "contact@eligentai.com",
         availableLanguage: ["English", "Hindi", "Spanish", "French"],
       },
       sameAs: [
