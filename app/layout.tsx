@@ -96,12 +96,7 @@ const structuredData = {
       email: "contact@eligentai.com",
       description:
         "AI engineering studio building production AI systems: WhatsApp AI receptionists, customer support automation, analytics copilots, and custom AI agents.",
-      founder: {
-        "@type": "Person",
-        name: "Shadab Khan",
-        jobTitle: "Founder & AI Engineer",
-        sameAs: "https://www.linkedin.com/in/shadab-khan-88a632264",
-      },
+      founder: { "@id": `${SITE_URL}/#founder` },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Lucknow",
@@ -119,6 +114,31 @@ const structuredData = {
         "https://instagram.com/eligentai",
         "https://youtube.com/@eligentai",
       ],
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#founder`,
+      name: "Shadab Khan",
+      jobTitle: "Founder & AI Engineer",
+      url: SITE_URL,
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+      description:
+        "Shadab Khan is the founder of Eligent AI, an AI engineering studio in Lucknow, India. He builds WhatsApp AI receptionists, AI customer support systems, and custom AI agents for businesses worldwide.",
+      knowsAbout: [
+        "AI agents",
+        "WhatsApp AI receptionists",
+        "AI customer support automation",
+        "RAG systems",
+        "LangChain",
+        "LangGraph",
+        "Business process automation",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lucknow",
+        addressCountry: "IN",
+      },
+      sameAs: ["https://www.linkedin.com/in/shadab-khan-88a632264"],
     },
     {
       "@type": "WebSite",
