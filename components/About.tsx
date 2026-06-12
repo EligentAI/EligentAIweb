@@ -5,7 +5,7 @@ import { Target, Zap, Code2 } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/language-provider";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/shadab-khan-88a632264";
+const LINKEDIN_URL = "https://www.linkedin.com/in/shadabkhanai";
 
 const valueIcons = [Target, Code2, Zap];
 const valueColors = [

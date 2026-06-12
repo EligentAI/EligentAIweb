@@ -34,7 +34,7 @@ export default function Footer() {
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
-              <a href="https://www.linkedin.com/in/shadab-khan-88a632264" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+              <a href="https://www.linkedin.com/in/shadabkhanai" target="_blank" rel="noopener noreferrer" title="LinkedIn"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
                 <FaLinkedin size={20} color="#0A66C2" />

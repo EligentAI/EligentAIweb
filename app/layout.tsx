@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "AI chatbot for business",
     "Eligent AI",
   ],
-  authors: [{ name: "Shadab Khan", url: "https://www.linkedin.com/in/shadab-khan-88a632264" }],
+  authors: [{ name: "Shadab Khan", url: "https://www.linkedin.com/in/shadabkhanai" }],
   creator: "Eligent AI",
   alternates: {
     canonical: "/",
@@ -109,7 +109,7 @@ const structuredData = {
         availableLanguage: ["English", "Hindi", "Spanish", "French"],
       },
       sameAs: [
-        "https://www.linkedin.com/in/shadab-khan-88a632264",
+        "https://www.linkedin.com/in/shadabkhanai",
         "https://twitter.com/eligentai",
         "https://instagram.com/eligentai",
         "https://youtube.com/@eligentai",
@@ -138,7 +138,7 @@ const structuredData = {
         addressLocality: "Lucknow",
         addressCountry: "IN",
       },
-      sameAs: ["https://www.linkedin.com/in/shadab-khan-88a632264"],
+      sameAs: ["https://www.linkedin.com/in/shadabkhanai"],
     },
     {
       "@type": "WebSite",
