@@ -18,6 +18,8 @@ const nextSteps = [
 
 const projectTypes = [
   "Not sure yet",
+  "WhatsApp AI Receptionist",
+  "Customer Support AI",
   "AI Chatbot / Copilot",
   "Data Dashboard / Analytics",
   "Multi-Agent System",
@@ -155,7 +157,7 @@ export default function Contact() {
               <div>
                 <p className="font-semibold text-[14px]" style={{ color: "#16A34A" }}>Now Accepting New Projects</p>
                 <p className="text-[12px] mt-0.5" style={{ color: "var(--color-text-muted)" }}>
-                  2 project slots open for Q2 2026 · Small businesses · Startups · Enterprises
+                  2 project slots open this quarter · Small businesses · Startups · Enterprises
                 </p>
               </div>
             </motion.div>

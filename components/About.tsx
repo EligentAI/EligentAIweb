@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Target, Zap, Code2 } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/language-provider";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/shadab-khan-88a632264";
 
 const valueIcons = [Target, Code2, Zap];
 const valueColors = [
@@ -43,6 +46,46 @@ export default function About() {
               </p>
               <p>{t.about.body3}</p>
             </div>
+
+            {/* Founder card */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="glass-card rounded-2xl p-6 mt-9 flex items-center gap-5 flex-wrap"
+            >
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 font-syne font-bold text-[20px]"
+                style={{
+                  background: "linear-gradient(135deg, rgba(34,197,94,0.15), rgba(77,110,255,0.15))",
+                  border: "1px solid rgba(34,197,94,0.3)",
+                  color: "var(--color-mint)",
+                }}
+              >
+                SK
+              </div>
+              <div className="flex-1 min-w-[200px]">
+                <p className="font-syne font-semibold text-[16px]" style={{ color: "var(--color-text-primary)" }}>
+                  {t.about.founderName}
+                </p>
+                <p className="text-[12.5px] mb-1.5" style={{ color: "var(--color-mint)" }}>{t.about.founderRole}</p>
+                <p className="text-[13px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                  {t.about.founderBio}
+                </p>
+              </div>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[12.5px] font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                style={{ background: "rgba(10,102,194,0.10)", border: "1px solid rgba(10,102,194,0.30)", color: "#0A66C2" }}
+              >
+                <FaLinkedin size={14} />
+                {t.about.founderCta}
+              </a>
+            </motion.div>
+
             <div className="mt-10 flex items-center gap-4">
               <div className="h-px flex-1 max-w-[200px]" style={{ background: "linear-gradient(to right, rgba(0,255,178,0.3), transparent)" }} />
               <div className="glow-dot" />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Zap, Shield, Layers } from "lucide-react";
+import { ArrowRight, ChevronDown, Zap, BadgeCheck, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/lib/language-provider";
 import { useTheme } from "@/lib/theme-provider";
 import { LucideIcon } from "lucide-react";
@@ -14,11 +14,7 @@ const fadeUp = {
   }),
 };
 
-const features: { icon: LucideIcon; label: string }[] = [
-  { icon: Zap, label: "Go Live in Weeks, Not Months" },
-  { icon: Layers, label: "From Prototype to Production" },
-  { icon: Shield, label: "We Build, Deploy & Maintain" },
-];
+const featureIcons: LucideIcon[] = [Zap, BadgeCheck, ShieldCheck];
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -144,7 +140,9 @@ export default function Hero() {
 
         {/* Feature Badges */}
         <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-3">
-          {features.map(({ icon: Icon, label }, i) => (
+          {(t.hero.features as string[]).map((label, i) => {
+            const Icon = featureIcons[i];
+            return (
             <motion.div
               key={label}
               className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border backdrop-blur-sm cursor-default"
@@ -178,7 +176,8 @@ export default function Hero() {
                 {label}
               </span>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

@@ -20,21 +20,35 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     hero: {
       badge: "AI Engineering Studio",
-      headline1: "AI Systems for",
-      headline2: "Business Data,",
-      headline3: "Knowledge & Operations",
-      sub: "We build intelligent AI systems that help companies analyze data, automate workflows and unlock insights.",
-      cta1: "View Projects",
-      cta2: "Contact Us",
-      stat1Label: "Production Systems",
-      stat2Label: "Technologies",
-      stat3Label: "End-to-End Delivery",
+      headline1: "We Build AI Systems That",
+      headline2: "Answer, Automate & Analyze",
+      headline3: "for Your Business — 24/7",
+      sub: "From WhatsApp AI receptionists to customer support automation and analytics copilots — we design, build, and deploy production AI systems. Fixed price. You own the code.",
+      cta1: "See Live Demos",
+      cta2: "Book a Free Strategy Call",
+      scrollLabel: "Explore",
+      features: [
+        "Live in Weeks, Not Months",
+        "Fixed-Price — No Surprises",
+        "100% Code Ownership",
+      ],
     },
     services: {
       sectionLabel: "What We Build",
       title: "AI Systems We Build",
       sub: "Focused engineering on intelligent systems that connect AI reasoning with real business data.",
+      learnMore: "Learn more",
       items: [
+        {
+          title: "WhatsApp AI Receptionist",
+          description:
+            "A 24/7 AI receptionist on WhatsApp that answers every inquiry instantly, books appointments into your calendar, qualifies leads, and hands off to your team when needed. Built for clinics, salons, real estate, and local businesses.",
+        },
+        {
+          title: "AI Customer Support Automation",
+          description:
+            "Intelligent support systems that understand customer inquiries, retrieve relevant knowledge, and generate accurate responses — resolving routine tickets automatically and escalating to humans only when needed.",
+        },
         {
           title: "AI Analytics Dashboards",
           description:
@@ -44,11 +58,6 @@ export const translations: Record<Locale, Record<string, any>> = {
           title: "AI Knowledge Assistants",
           description:
             "RAG-powered systems that let teams search and retrieve information from company documents, wikis, and internal knowledge bases through natural conversation.",
-        },
-        {
-          title: "AI Customer Support Automation",
-          description:
-            "Intelligent support systems that understand customer inquiries, retrieve relevant knowledge, and generate accurate responses — reducing manual support load.",
         },
         {
           title: "AI Business Process Automation",
@@ -62,13 +71,67 @@ export const translations: Record<Locale, Record<string, any>> = {
         },
       ],
     },
+    whatsapp: {
+      sectionLabel: "Flagship Solution",
+      statusBadge: "Launching soon · Early-access slots open",
+      title1: "Your 24/7 AI Receptionist",
+      title2: "on WhatsApp",
+      sub: "Your customers already message you on WhatsApp — but nobody can reply around the clock. Your AI receptionist answers in seconds, books appointments, qualifies leads, and hands over to your team only when it matters.",
+      bullets: [
+        {
+          title: "Replies in seconds, 24/7",
+          desc: "Every inquiry answered instantly — nights, weekends, and holidays included.",
+        },
+        {
+          title: "Books appointments automatically",
+          desc: "Checks availability and confirms bookings directly into your calendar.",
+        },
+        {
+          title: "Speaks your customer's language",
+          desc: "English, Hindi, Spanish, French — the AI adapts to each customer automatically.",
+        },
+        {
+          title: "Qualifies leads before you talk",
+          desc: "Collects name, need, and budget so your team only handles serious inquiries.",
+        },
+        {
+          title: "Human handoff when it matters",
+          desc: "Complex or sensitive conversations are routed to your staff instantly.",
+        },
+      ],
+      industriesLabel: "Built for",
+      industries: ["Clinics & Hospitals", "Salons & Spas", "Real Estate", "Hotels & Travel", "Local Services", "E-commerce"],
+      cta1: "Request a WhatsApp Demo",
+      cta2: "Book a Free Call",
+      chat: {
+        businessName: "City Care Clinic",
+        status: "online",
+        msg1: "Hi! Do you have any appointment slots tomorrow morning?",
+        msg2: "Good morning! 😊 Yes — Dr. Mehra has openings tomorrow at 9:30 AM and 11:00 AM. Which works better for you?",
+        msg3: "11 AM please. Do you also accept insurance?",
+        msg4: "Done — you're booked for tomorrow at 11:00 AM ✅ And yes, we accept all major insurance providers. Your confirmation is on its way!",
+        footer: "AI Receptionist · replies in ~2 seconds",
+      },
+    },
     projects: {
       sectionLabel: "Our Work",
       title: "Our AI Systems",
-      sub: "End-to-end AI systems built and deployed for real business needs.",
+      sub: "End-to-end AI systems built and deployed for real business needs — try the live demos yourself.",
       status: "Production",
+      flagship: "Flagship Build",
       stackLabel: "Tech Stack",
       items: [
+        {
+          subtitle: "AI Customer Support Platform",
+          description:
+            "Multi-tenant AI customer support platform that resolves queries end-to-end. A LangGraph-powered agent answers from your knowledge base, scores its own confidence in real time, and escalates to a human only when needed — with analytics and CSAT tracking built in.",
+          features: [
+            "LangGraph multi-step AI agent",
+            "Real-time confidence scoring",
+            "Smart human escalation",
+            "Analytics & CSAT tracking",
+          ],
+        },
         {
           subtitle: "Business Intelligence AI",
           description:
@@ -106,6 +169,15 @@ export const translations: Record<Locale, Record<string, any>> = {
         outcome: "Outcome",
       },
       items: [
+        {
+          sections: [
+            "Support teams drown in repetitive questions. Customers wait hours for answers, agents burn out, and scaling support traditionally means hiring more people.",
+            "A multi-tenant AI support platform. A LangGraph agent understands each query, answers from the company knowledge base, and self-scores its confidence — auto-resolving routine tickets and escalating edge cases to humans.",
+            "LangGraph state machine orchestrating intent routing, RAG retrieval, response generation, and confidence scoring. FastAPI backend with JWT auth and role-based multi-tenant workspaces. Next.js dashboard with live analytics and CSAT tracking.",
+            "Python · LangGraph · OpenAI API · FastAPI · Next.js · PostgreSQL · RAG",
+            "Designed so routine queries get resolved in seconds, 24/7, while humans handle only the conversations that truly need them — support scales without new headcount, with deflection and CSAT metrics visible in real time.",
+          ],
+        },
         {
           sections: [
             "Business analysts spent hours writing SQL queries and building charts manually. Non-technical stakeholders couldn't access data insights without developer support, creating bottlenecks in decision-making.",
@@ -182,6 +254,10 @@ export const translations: Record<Locale, Record<string, any>> = {
       body2Items: ["AI agents", "RAG systems", "data analytics automation", "AI-powered knowledge assistants"],
       body2Connector: "and",
       body3: "Our mission is to help companies transform their data and knowledge into intelligent systems — practical tools that work reliably in production.",
+      founderName: "Shadab Khan",
+      founderRole: "Founder & AI Engineer",
+      founderBio: "Every project is architected, built, and shipped by the founder directly — one point of contact, full accountability, no handoffs.",
+      founderCta: "Connect on LinkedIn",
       values: [
         {
           title: "Focused Execution",
@@ -215,7 +291,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       sendAnother: "Send another message",
     },
     footer: {
-      tagline: "AI engineering studio building intelligent systems for modern businesses.",
+      tagline: "AI engineering studio building WhatsApp AI receptionists, customer support automation, and custom AI systems for modern businesses.",
       navTitle: "Navigation",
       connectTitle: "Connect",
       copyright: "All rights reserved.",
@@ -236,16 +312,18 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     hero: {
       badge: "Estudio de Ingeniería IA",
-      headline1: "Sistemas de IA para",
-      headline2: "Datos Empresariales,",
-      headline3: "Conocimiento y Operaciones",
-      sub: "Construimos sistemas de inteligencia artificial que ayudan a las empresas a analizar datos, automatizar flujos de trabajo y descubrir insights.",
-      cta1: "Ver Proyectos",
-      cta2: "Contáctanos",
-      stat1Label: "Sistemas IA Creados",
-      stat2Label: "Tecnologías",
-      stat3Label: "Enfoque",
+      headline1: "Creamos Sistemas de IA que",
+      headline2: "Responden, Automatizan y Analizan",
+      headline3: "para tu Negocio — 24/7",
+      sub: "Desde recepcionistas IA en WhatsApp hasta automatización de soporte al cliente y copilotos de análisis — diseñamos, construimos y desplegamos sistemas de IA en producción. Precio fijo. El código es tuyo.",
+      cta1: "Ver Demos en Vivo",
+      cta2: "Reserva una Llamada Gratis",
       scrollLabel: "Explorar",
+      features: [
+        "En Producción en Semanas",
+        "Precio Fijo — Sin Sorpresas",
+        "100% Propiedad del Código",
+      ],
     },
     services: {
       sectionLabel: "Lo Que Construimos",
@@ -253,6 +331,16 @@ export const translations: Record<Locale, Record<string, any>> = {
       sub: "Ingeniería enfocada en sistemas inteligentes que conectan el razonamiento de IA con datos empresariales reales.",
       learnMore: "Saber más",
       items: [
+        {
+          title: "Recepcionista IA en WhatsApp",
+          description:
+            "Un recepcionista IA en WhatsApp 24/7 que responde cada consulta al instante, agenda citas en tu calendario, califica leads y transfiere a tu equipo cuando es necesario. Ideal para clínicas, salones, inmobiliarias y negocios locales.",
+        },
+        {
+          title: "Automatización de Soporte al Cliente",
+          description:
+            "Sistemas de soporte inteligente que comprenden las consultas de los clientes, recuperan conocimiento relevante y generan respuestas precisas — resolviendo tickets rutinarios automáticamente y escalando a humanos solo cuando es necesario.",
+        },
         {
           title: "Dashboards de Análisis IA",
           description:
@@ -262,11 +350,6 @@ export const translations: Record<Locale, Record<string, any>> = {
           title: "Asistentes de Conocimiento IA",
           description:
             "Sistemas RAG que permiten a los equipos buscar y recuperar información de documentos empresariales, wikis y bases de conocimiento internas mediante conversación natural.",
-        },
-        {
-          title: "Automatización de Soporte al Cliente",
-          description:
-            "Sistemas de soporte inteligente que comprenden las consultas de los clientes, recuperan conocimiento relevante y generan respuestas precisas, reduciendo la carga de soporte manual.",
         },
         {
           title: "Automatización de Procesos Empresariales",
@@ -280,13 +363,67 @@ export const translations: Record<Locale, Record<string, any>> = {
         },
       ],
     },
+    whatsapp: {
+      sectionLabel: "Solución Estrella",
+      statusBadge: "Lanzamiento próximo · Acceso anticipado disponible",
+      title1: "Tu Recepcionista IA 24/7",
+      title2: "en WhatsApp",
+      sub: "Tus clientes ya te escriben por WhatsApp — pero nadie puede responder a toda hora. Tu recepcionista IA responde en segundos, agenda citas, califica leads y transfiere a tu equipo solo cuando importa.",
+      bullets: [
+        {
+          title: "Responde en segundos, 24/7",
+          desc: "Cada consulta respondida al instante — noches, fines de semana y festivos incluidos.",
+        },
+        {
+          title: "Agenda citas automáticamente",
+          desc: "Verifica disponibilidad y confirma reservas directamente en tu calendario.",
+        },
+        {
+          title: "Habla el idioma de tu cliente",
+          desc: "Español, inglés, hindi, francés — la IA se adapta a cada cliente automáticamente.",
+        },
+        {
+          title: "Califica leads antes de hablar",
+          desc: "Recopila nombre, necesidad y presupuesto para que tu equipo solo atienda consultas serias.",
+        },
+        {
+          title: "Transferencia humana cuando importa",
+          desc: "Las conversaciones complejas o sensibles se dirigen a tu personal al instante.",
+        },
+      ],
+      industriesLabel: "Diseñado para",
+      industries: ["Clínicas y Hospitales", "Salones y Spas", "Inmobiliarias", "Hoteles y Viajes", "Servicios Locales", "E-commerce"],
+      cta1: "Solicita una Demo en WhatsApp",
+      cta2: "Reserva una Llamada Gratis",
+      chat: {
+        businessName: "Clínica City Care",
+        status: "en línea",
+        msg1: "¡Hola! ¿Tienen citas disponibles mañana por la mañana?",
+        msg2: "¡Buenos días! 😊 Sí — el Dr. Mehra tiene espacios mañana a las 9:30 y a las 11:00. ¿Cuál te conviene más?",
+        msg3: "A las 11 por favor. ¿También aceptan seguro médico?",
+        msg4: "¡Listo! Tu cita quedó agendada para mañana a las 11:00 ✅ Y sí, aceptamos las principales aseguradoras. ¡Tu confirmación está en camino!",
+        footer: "Recepcionista IA · responde en ~2 segundos",
+      },
+    },
     projects: {
       sectionLabel: "Nuestro Trabajo",
       title: "Nuestros Sistemas de IA",
-      sub: "Sistemas de IA de extremo a extremo construidos y desplegados para necesidades empresariales reales.",
+      sub: "Sistemas de IA de extremo a extremo construidos y desplegados para necesidades empresariales reales — prueba las demos en vivo.",
       status: "Producción",
+      flagship: "Proyecto Insignia",
       stackLabel: "Tecnologías",
       items: [
+        {
+          subtitle: "Plataforma de Soporte al Cliente con IA",
+          description:
+            "Plataforma multi-tenant de soporte al cliente con IA que resuelve consultas de extremo a extremo. Un agente impulsado por LangGraph responde desde tu base de conocimiento, evalúa su propia confianza en tiempo real y escala a un humano solo cuando es necesario — con análisis y seguimiento de CSAT integrados.",
+          features: [
+            "Agente IA multi-paso con LangGraph",
+            "Puntuación de confianza en tiempo real",
+            "Escalación inteligente a humanos",
+            "Análisis y seguimiento CSAT",
+          ],
+        },
         {
           subtitle: "IA de Inteligencia Empresarial",
           description:
@@ -324,6 +461,15 @@ export const translations: Record<Locale, Record<string, any>> = {
         outcome: "Resultado",
       },
       items: [
+        {
+          sections: [
+            "Los equipos de soporte se ahogan en preguntas repetitivas. Los clientes esperan horas por respuestas, los agentes se agotan y escalar el soporte tradicionalmente significa contratar más personal.",
+            "Una plataforma de soporte IA multi-tenant. Un agente LangGraph entiende cada consulta, responde desde la base de conocimiento de la empresa y evalúa su propia confianza — resolviendo tickets rutinarios automáticamente y escalando casos límite a humanos.",
+            "Máquina de estados LangGraph que orquesta enrutamiento de intención, recuperación RAG, generación de respuestas y puntuación de confianza. Backend FastAPI con autenticación JWT y espacios multi-tenant basados en roles. Dashboard Next.js con análisis en vivo y seguimiento CSAT.",
+            "Python · LangGraph · OpenAI API · FastAPI · Next.js · PostgreSQL · RAG",
+            "Diseñado para que las consultas rutinarias se resuelvan en segundos, 24/7, mientras los humanos atienden solo las conversaciones que realmente los necesitan — el soporte escala sin contratar más personal, con métricas de deflección y CSAT visibles en tiempo real.",
+          ],
+        },
         {
           sections: [
             "Los analistas de negocio pasaban horas escribiendo consultas SQL y construyendo gráficos manualmente. Los stakeholders no técnicos no podían acceder a insights de datos sin soporte de desarrollo.",
@@ -400,6 +546,10 @@ export const translations: Record<Locale, Record<string, any>> = {
       body2Items: ["agentes de IA", "sistemas RAG", "automatización de análisis de datos", "asistentes de conocimiento impulsados por IA"],
       body2Connector: "y",
       body3: "Nuestra misión es ayudar a las empresas a transformar sus datos y conocimiento en sistemas inteligentes — herramientas prácticas que funcionan de manera confiable en producción.",
+      founderName: "Shadab Khan",
+      founderRole: "Fundador e Ingeniero de IA",
+      founderBio: "Cada proyecto es diseñado, construido y entregado directamente por el fundador — un solo punto de contacto, responsabilidad total, sin intermediarios.",
+      founderCta: "Conectar en LinkedIn",
       values: [
         {
           title: "Ejecución Enfocada",
@@ -433,7 +583,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       sendAnother: "Enviar otro mensaje",
     },
     footer: {
-      tagline: "Estudio de ingeniería de IA que construye sistemas inteligentes para empresas modernas.",
+      tagline: "Estudio de ingeniería de IA que construye recepcionistas IA en WhatsApp, automatización de soporte al cliente y sistemas de IA a medida para empresas modernas.",
       navTitle: "Navegación",
       connectTitle: "Conectar",
       copyright: "Todos los derechos reservados.",
@@ -454,16 +604,18 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     hero: {
       badge: "Studio d'Ingénierie IA",
-      headline1: "Systèmes IA pour",
-      headline2: "les Données Métier,",
-      headline3: "la Connaissance & les Opérations",
-      sub: "Nous construisons des systèmes d'IA intelligents qui aident les entreprises à analyser les données, automatiser les flux de travail et découvrir des insights.",
-      cta1: "Voir les Projets",
-      cta2: "Nous Contacter",
-      stat1Label: "Systèmes IA Créés",
-      stat2Label: "Technologies",
-      stat3Label: "Focus",
+      headline1: "Nous Créons des Systèmes IA qui",
+      headline2: "Répondent, Automatisent & Analysent",
+      headline3: "pour Votre Entreprise — 24/7",
+      sub: "Des réceptionnistes IA sur WhatsApp à l'automatisation du support client et aux copilotes d'analyse — nous concevons, construisons et déployons des systèmes IA en production. Prix fixe. Le code vous appartient.",
+      cta1: "Voir les Démos en Direct",
+      cta2: "Réserver un Appel Gratuit",
       scrollLabel: "Explorer",
+      features: [
+        "En Production en Semaines",
+        "Prix Fixe — Sans Surprises",
+        "100% Propriété du Code",
+      ],
     },
     services: {
       sectionLabel: "Ce que Nous Construisons",
@@ -471,6 +623,16 @@ export const translations: Record<Locale, Record<string, any>> = {
       sub: "Ingénierie ciblée sur des systèmes intelligents qui connectent le raisonnement IA aux données métier réelles.",
       learnMore: "En savoir plus",
       items: [
+        {
+          title: "Réceptionniste IA sur WhatsApp",
+          description:
+            "Un réceptionniste IA sur WhatsApp 24/7 qui répond instantanément à chaque demande, réserve des rendez-vous dans votre calendrier, qualifie les prospects et transfère à votre équipe si nécessaire. Idéal pour cliniques, salons, immobilier et commerces locaux.",
+        },
+        {
+          title: "Automatisation du Support Client IA",
+          description:
+            "Systèmes de support intelligents qui comprennent les demandes des clients, récupèrent les connaissances pertinentes et génèrent des réponses précises — résolvant automatiquement les tickets courants et escaladant vers un humain uniquement si nécessaire.",
+        },
         {
           title: "Tableaux de Bord IA Analytics",
           description:
@@ -480,11 +642,6 @@ export const translations: Record<Locale, Record<string, any>> = {
           title: "Assistants de Connaissance IA",
           description:
             "Systèmes alimentés par RAG permettant aux équipes de rechercher et récupérer des informations dans des documents d'entreprise, wikis et bases de connaissances internes via une conversation naturelle.",
-        },
-        {
-          title: "Automatisation du Support Client IA",
-          description:
-            "Systèmes de support intelligents qui comprennent les demandes des clients, récupèrent les connaissances pertinentes et génèrent des réponses précises — réduisant la charge de support manuel.",
         },
         {
           title: "Automatisation des Processus Métier IA",
@@ -498,13 +655,67 @@ export const translations: Record<Locale, Record<string, any>> = {
         },
       ],
     },
+    whatsapp: {
+      sectionLabel: "Solution Phare",
+      statusBadge: "Lancement imminent · Accès anticipé ouvert",
+      title1: "Votre Réceptionniste IA 24/7",
+      title2: "sur WhatsApp",
+      sub: "Vos clients vous écrivent déjà sur WhatsApp — mais personne ne peut répondre à toute heure. Votre réceptionniste IA répond en quelques secondes, réserve des rendez-vous, qualifie les prospects et transfère à votre équipe seulement quand c'est important.",
+      bullets: [
+        {
+          title: "Répond en secondes, 24/7",
+          desc: "Chaque demande traitée instantanément — nuits, week-ends et jours fériés inclus.",
+        },
+        {
+          title: "Réserve les rendez-vous automatiquement",
+          desc: "Vérifie les disponibilités et confirme les réservations directement dans votre calendrier.",
+        },
+        {
+          title: "Parle la langue de votre client",
+          desc: "Français, anglais, espagnol, hindi — l'IA s'adapte automatiquement à chaque client.",
+        },
+        {
+          title: "Qualifie les prospects avant l'échange",
+          desc: "Recueille nom, besoin et budget pour que votre équipe ne traite que les demandes sérieuses.",
+        },
+        {
+          title: "Transfert humain quand c'est important",
+          desc: "Les conversations complexes ou sensibles sont dirigées vers votre personnel instantanément.",
+        },
+      ],
+      industriesLabel: "Conçu pour",
+      industries: ["Cliniques & Hôpitaux", "Salons & Spas", "Immobilier", "Hôtels & Voyages", "Services Locaux", "E-commerce"],
+      cta1: "Demander une Démo WhatsApp",
+      cta2: "Réserver un Appel Gratuit",
+      chat: {
+        businessName: "Clinique City Care",
+        status: "en ligne",
+        msg1: "Bonjour ! Avez-vous des créneaux disponibles demain matin ?",
+        msg2: "Bonjour ! 😊 Oui — le Dr Mehra a des disponibilités demain à 9h30 et 11h00. Lequel vous convient le mieux ?",
+        msg3: "11h s'il vous plaît. Acceptez-vous aussi les assurances ?",
+        msg4: "C'est fait — vous êtes réservé pour demain à 11h00 ✅ Et oui, nous acceptons les principales assurances. Votre confirmation arrive !",
+        footer: "Réceptionniste IA · répond en ~2 secondes",
+      },
+    },
     projects: {
       sectionLabel: "Notre Travail",
       title: "Nos Systèmes IA",
-      sub: "Systèmes IA de bout en bout construits et déployés pour de vrais besoins métier.",
+      sub: "Systèmes IA de bout en bout construits et déployés pour de vrais besoins métier — essayez les démos en direct.",
       status: "Production",
+      flagship: "Projet Phare",
       stackLabel: "Technologies",
       items: [
+        {
+          subtitle: "Plateforme IA de Support Client",
+          description:
+            "Plateforme multi-tenant de support client IA qui résout les demandes de bout en bout. Un agent propulsé par LangGraph répond depuis votre base de connaissances, évalue sa propre confiance en temps réel et escalade vers un humain uniquement si nécessaire — avec analyses et suivi CSAT intégrés.",
+          features: [
+            "Agent IA multi-étapes LangGraph",
+            "Score de confiance en temps réel",
+            "Escalade humaine intelligente",
+            "Analyses & suivi CSAT",
+          ],
+        },
         {
           subtitle: "IA de Business Intelligence",
           description:
@@ -542,6 +753,15 @@ export const translations: Record<Locale, Record<string, any>> = {
         outcome: "Résultat",
       },
       items: [
+        {
+          sections: [
+            "Les équipes de support croulent sous les questions répétitives. Les clients attendent des heures, les agents s'épuisent, et faire évoluer le support signifie traditionnellement embaucher davantage.",
+            "Une plateforme de support IA multi-tenant. Un agent LangGraph comprend chaque demande, répond depuis la base de connaissances de l'entreprise et évalue sa propre confiance — résolvant automatiquement les tickets courants et escaladant les cas limites vers des humains.",
+            "Machine à états LangGraph orchestrant le routage d'intention, la récupération RAG, la génération de réponses et le score de confiance. Backend FastAPI avec authentification JWT et espaces multi-tenant basés sur les rôles. Dashboard Next.js avec analyses en direct et suivi CSAT.",
+            "Python · LangGraph · OpenAI API · FastAPI · Next.js · PostgreSQL · RAG",
+            "Conçu pour que les demandes courantes soient résolues en quelques secondes, 24/7, tandis que les humains ne traitent que les conversations qui les nécessitent vraiment — le support évolue sans embauche supplémentaire, avec métriques de déflexion et CSAT visibles en temps réel.",
+          ],
+        },
         {
           sections: [
             "Les analystes métier passaient des heures à écrire des requêtes SQL et à construire des graphiques manuellement. Les parties prenantes non techniques ne pouvaient pas accéder aux insights de données sans support développeur.",
@@ -618,6 +838,10 @@ export const translations: Record<Locale, Record<string, any>> = {
       body2Items: ["les agents IA", "les systèmes RAG", "l'automatisation de l'analyse de données", "les assistants de connaissance alimentés par IA"],
       body2Connector: "et",
       body3: "Notre mission est d'aider les entreprises à transformer leurs données et leurs connaissances en systèmes intelligents — des outils pratiques qui fonctionnent de manière fiable en production.",
+      founderName: "Shadab Khan",
+      founderRole: "Fondateur & Ingénieur IA",
+      founderBio: "Chaque projet est conçu, construit et livré directement par le fondateur — un seul interlocuteur, une responsabilité totale, sans intermédiaires.",
+      founderCta: "Se connecter sur LinkedIn",
       values: [
         {
           title: "Exécution Ciblée",
@@ -651,7 +875,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       sendAnother: "Envoyer un autre message",
     },
     footer: {
-      tagline: "Studio d'ingénierie IA construisant des systèmes intelligents pour les entreprises modernes.",
+      tagline: "Studio d'ingénierie IA construisant des réceptionnistes IA sur WhatsApp, l'automatisation du support client et des systèmes IA sur mesure pour les entreprises modernes.",
       navTitle: "Navigation",
       connectTitle: "Connexion",
       copyright: "Tous droits réservés.",

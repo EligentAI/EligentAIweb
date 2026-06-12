@@ -8,6 +8,21 @@ const sectionIcons = [AlertCircle, Lightbulb, GitBranch, Layers, TrendingUp];
 
 const studyMeta = [
   {
+    title: "EligentAI Support",
+    subtitle: "AI Customer Support Platform",
+    accent: "#A855F7",
+    accentDim: "rgba(168,85,247,0.08)",
+    accentBorder: "rgba(168,85,247,0.18)",
+    arch: [
+      { label: "Customer Query", icon: "💬", desc: "Any time, any language" },
+      { label: "LangGraph Agent", icon: "🕸", desc: "Intent + reasoning" },
+      { label: "RAG Retrieval", icon: "📚", desc: "Knowledge base answers" },
+      { label: "Confidence Score", icon: "🎯", desc: "Self-evaluation" },
+      { label: "Human Handoff", icon: "🙋", desc: "Only when needed" },
+      { label: "Analytics & CSAT", icon: "📊", desc: "Quality tracking" },
+    ],
+  },
+  {
     title: "AI Analyst",
     subtitle: "Business Intelligence",
     accent: "#16A34A",

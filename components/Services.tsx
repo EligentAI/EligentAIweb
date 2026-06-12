@@ -2,16 +2,21 @@
 
 import { motion } from "framer-motion";
 import { BarChart3, Bot, MessageSquare, Workflow, Brain } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/lib/language-provider";
 
-const icons = [BarChart3, Brain, MessageSquare, Workflow, Bot];
+const icons = [FaWhatsapp, MessageSquare, BarChart3, Brain, Workflow, Bot];
 const colors = [
+  { color: "rgba(37,211,102,0.12)", border: "rgba(37,211,102,0.25)", iconColor: "#25D366" },
+  { color: "rgba(168,85,247,0.12)", border: "rgba(168,85,247,0.2)", iconColor: "#A855F7" },
   { color: "rgba(0,255,178,0.12)", border: "rgba(0,255,178,0.2)", iconColor: "#16A34A" },
   { color: "rgba(77,110,255,0.12)", border: "rgba(77,110,255,0.2)", iconColor: "#4D6EFF" },
-  { color: "rgba(168,85,247,0.12)", border: "rgba(168,85,247,0.2)", iconColor: "#A855F7" },
   { color: "rgba(251,191,36,0.10)", border: "rgba(251,191,36,0.18)", iconColor: "#FBBF24" },
   { color: "rgba(0,255,178,0.08)", border: "rgba(0,255,178,0.15)", iconColor: "#16A34A" },
 ];
+
+// where each card's "Learn more" leads
+const anchors = ["whatsapp-ai", "projects", "projects", "projects", "process", "case-studies"];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 const cardAnim = {
@@ -45,7 +50,8 @@ export default function Services() {
             const c = colors[i];
             return (
               <motion.div key={i} variants={cardAnim}
-                className="glass-card glass-card-hover rounded-2xl p-7 cursor-default group transition-all duration-400 shadow-card hover:shadow-card-hover">
+                onClick={() => document.getElementById(anchors[i])?.scrollIntoView({ behavior: "smooth" })}
+                className="glass-card glass-card-hover rounded-2xl p-7 cursor-pointer group transition-all duration-400 shadow-card hover:shadow-card-hover">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
                   style={{ background: c.color, border: `1px solid ${c.border}` }}>
                   <Icon size={22} style={{ color: c.iconColor }} />

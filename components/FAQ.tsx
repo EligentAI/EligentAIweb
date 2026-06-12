@@ -6,6 +6,13 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
+    q: "Can you build a WhatsApp AI receptionist for my clinic or local business?",
+    a: "Yes — it's our flagship solution. Your AI receptionist answers on WhatsApp 24/7: it greets patients or customers, answers common questions, books appointments into your calendar, qualifies leads, and hands over to a human when needed. It works great for clinics, hospitals, salons, real estate agencies, hotels, and any business whose customers live on WhatsApp.",
+    accent: "#25D366",
+    dim: "rgba(37,211,102,0.08)",
+    border: "rgba(37,211,102,0.20)",
+  },
+  {
     q: "How long does a typical AI project take?",
     a: "Most projects fall into two categories — rapid prototypes (1–2 weeks) and production-grade systems (4–8 weeks). A RAG-powered knowledge assistant typically takes 2–3 weeks. A full multi-agent copilot with custom frontend takes 5–8 weeks. We always share a clear timeline before starting.",
     accent: "#16A34A",
@@ -42,10 +49,17 @@ const faqs = [
   },
   {
     q: "How much does a project cost?",
-    a: "Pricing depends on the scope and complexity of the system. We offer everything from focused pilot builds to full production systems with custom frontend and deployment.We provide a fixed-price quote after a free 30-minute consultation — no hourly billing, no surprise invoices.",
+    a: "Pricing depends on the scope and complexity of the system. We offer everything from focused pilot builds to full production systems with custom frontend and deployment. We provide a fixed-price quote after a free 30-minute consultation — no hourly billing, no surprise invoices.",
     accent: "#7B9FFF",
     dim: "rgba(77,110,255,0.08)",
     border: "rgba(77,110,255,0.20)",
+  },
+  {
+    q: "Which tools and platforms can you integrate with?",
+    a: "WhatsApp Business API, Google Calendar and Calendly, Gmail and Outlook, Google Sheets, Notion, Slack, Telegram, CRMs like HubSpot, plus any custom REST API or database. If your business runs on it, we can usually connect AI to it.",
+    accent: "#16A34A",
+    dim: "rgba(22,163,74,0.08)",
+    border: "rgba(22,163,74,0.20)",
   },
   {
     q: "Will I own the code after the project?",

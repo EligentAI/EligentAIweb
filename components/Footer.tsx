@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, ArrowUp, MapPin, Clock, Zap } from "lucide-react";
-import { FaGithub, FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useLanguage } from "@/lib/language-provider";
 
@@ -29,16 +29,11 @@ export default function Footer() {
             </button>
 
             <p className="text-[14px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-              Specialized AI engineering studio building intelligent systems for modern businesses. Specializing in multi-agent AI, RAG pipelines, and enterprise copilots.
+              {t.footer.tagline}
             </p>
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
-              <a href="https://github.com/EligentAI" target="_blank" rel="noopener noreferrer" title="GitHub"
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
-                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <FaGithub size={20} color="#24292e" />
-              </a>
               <a href="https://www.linkedin.com/in/shadab-khan-88a632264" target="_blank" rel="noopener noreferrer" title="LinkedIn"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
@@ -47,7 +42,7 @@ export default function Footer() {
               <a href="https://twitter.com/eligentai" target="_blank" rel="noopener noreferrer" title="X (Twitter)"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <FaXTwitter size={20} color="#000000" />
+                <FaXTwitter size={20} style={{ color: "var(--color-text-primary)" }} />
               </a>
               <a href="https://instagram.com/eligentai" target="_blank" rel="noopener noreferrer" title="Instagram"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
@@ -105,7 +100,7 @@ export default function Footer() {
                 <div>
                   <p className="text-[14px] font-medium mb-0.5" style={{ color: "var(--color-text-primary)" }}>Availability</p>
                   <p className="text-[13px]" style={{ color: "var(--color-text-secondary)" }}>
-                    2 project slots open for Q2 2026<br />Small businesses · Startups · Enterprises
+                    2 project slots open this quarter<br />Small businesses · Startups · Enterprises
                   </p>
                 </div>
               </div>
@@ -149,7 +144,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid var(--color-border)" }}>
+        <div className="pt-6 pb-24 sm:pb-6 sm:pr-24 2xl:pr-0 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid var(--color-border)" }}>
           <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
             © {new Date().getFullYear()} Eligent AI. All rights reserved. Built with ❤️ in India.
           </p>

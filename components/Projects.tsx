@@ -1,16 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, MessageCircle, BarChart2, FileSearch, Shield, FileText, ExternalLink } from "lucide-react";
+import { Database, MessageCircle, BarChart2, FileSearch, Shield, FileText, ExternalLink, Workflow, Target, Users, LineChart, Star } from "lucide-react";
 import { useLanguage } from "@/lib/language-provider";
 
+const SUPPORT_URL = "https://eligentai-support.vercel.app/";
 const PROJECT1_URL = "https://aibizanalyst.streamlit.app/";
 const PROJECT2_URL = "https://intelopsai.streamlit.app/";
+const SUPPORT_IMG = "/support-ai-screenshot.png";
 const PROJECT1_IMG = "/ai-analyst-screenshot.png";
 const PROJECT2_IMG = "/opspilot-screenshot.png";
 
+const supportStack = ["Python", "LangGraph", "OpenAI API", "FastAPI", "Next.js", "PostgreSQL", "RAG"];
 const project1stack = ["Python", "LangChain", "OpenAI API", "PostgreSQL", "Neon DB", "Plotly", "Streamlit"];
 const project2stack = ["Python", "LangChain", "OpenAI API", "PostgreSQL", "Neon DB", "RAG Architecture", "Streamlit"];
+const supportIcons = [Workflow, Target, Users, LineChart];
 const project1icons = [MessageCircle, BarChart2, Database, FileText];
 const project2icons = [FileSearch, Database, Shield, FileText];
 
@@ -19,8 +23,24 @@ export default function Projects() {
 
   const projects = [
     {
+      id: "eligent-support",
+      title: "EligentAI Support",
+      flagship: true,
+      icons: supportIcons,
+      stack: supportStack,
+      accent: "#A855F7",
+      dim: "rgba(168,85,247,0.10)",
+      border: "rgba(168,85,247,0.22)",
+      url: SUPPORT_URL,
+      img: SUPPORT_IMG,
+      btnBg: "rgba(168,85,247,0.12)",
+      btnBorder: "rgba(168,85,247,0.35)",
+      btnColor: "#C084FC",
+    },
+    {
       id: "ai-analyst",
       title: "AI Analyst",
+      flagship: false,
       icons: project1icons,
       stack: project1stack,
       accent: "#16A34A",
@@ -35,6 +55,7 @@ export default function Projects() {
     {
       id: "opspilot",
       title: "IntelOps AI",
+      flagship: false,
       icons: project2icons,
       stack: project2stack,
       accent: "#4D6EFF",
@@ -87,7 +108,13 @@ export default function Projects() {
                   <div className="p-8 lg:p-10 flex flex-col gap-6">
 
                     {/* Status badge */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      {meta.flagship && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-full tracking-wide" style={{ background: "rgba(251,191,36,0.10)", border: "1px solid rgba(251,191,36,0.30)", color: "#FBBF24" }}>
+                          <Star size={11} fill="currentColor" />
+                          {t.projects.flagship}
+                        </span>
+                      )}
                       <span className="px-3 py-1 text-[11px] font-medium rounded-full tracking-wide" style={{ background: meta.dim, border: "1px solid " + meta.border, color: meta.accent }}>
                         {t.projects.status}
                       </span>
@@ -142,7 +169,8 @@ export default function Projects() {
                       <div className="rounded-xl overflow-hidden" style={{ border: "1px solid " + meta.border, boxShadow: "0 20px 60px rgba(0,0,0,0.35)" }}>
                         <img
                           src={meta.img}
-                          alt={meta.title + " screenshot"}
+                          alt={meta.title + " — " + proj.subtitle}
+                          loading="lazy"
                           className="w-full block"
                         />
                       </div>
