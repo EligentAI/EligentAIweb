@@ -8,14 +8,21 @@ import { formatBlogDate, getAllPosts, getPost } from "@/lib/blog";
 
 const SITE = "https://eligentai.com";
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = {
+  params: Promise<{ slug: string }> | { slug: string };
+};
+
+async function resolveSlug(params: Props["params"]): Promise<string> {
+  const p = await Promise.resolve(params);
+  return p.slug;
+}
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const slug = await resolveSlug(params);
   const post = getPost(slug);
   if (!post) return { title: "Post not found" };
 
@@ -52,7 +59,7 @@ function ArticleBody({ slug }: { slug: string }) {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+  const slug = await resolveSlug(params);
   const post = getPost(slug);
   if (!post) notFound();
 
