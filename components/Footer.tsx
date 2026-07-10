@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Mail, ArrowUp, MapPin, Clock, Zap } from "lucide-react";
 import { FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
@@ -40,13 +39,6 @@ export default function Footer() {
             <p className="text-[14px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
               {t.footer.tagline}
             </p>
-            <Link
-              href="/blog"
-              className="text-[13px] font-medium w-fit underline underline-offset-2"
-              style={{ color: "#22D3EE" }}
-            >
-              {t.nav.blog || "Blog"}
-            </Link>
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
