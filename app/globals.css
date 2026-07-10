@@ -356,3 +356,72 @@ html.light .contact-title-gradient {
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }
+
+/* ══════════════════════════════
+   BLOG PROSE
+══════════════════════════════ */
+.blog-prose {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+.blog-prose .lead {
+  font-size: 1.15em;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25em;
+}
+.blog-prose p {
+  margin-bottom: 1.15em;
+}
+.blog-prose h2 {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.55em;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-top: 2.25em;
+  margin-bottom: 0.75em;
+  scroll-margin-top: 96px;
+}
+.blog-prose h3 {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: var(--color-text-primary);
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
+.blog-prose ul,
+.blog-prose ol {
+  margin: 0 0 1.25em 1.15em;
+  padding: 0;
+}
+.blog-prose li {
+  margin-bottom: 0.45em;
+  padding-left: 0.25em;
+}
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+.blog-prose a {
+  color: #22D3EE;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.blog-prose a:hover {
+  color: #67E8F9;
+}
+.blog-prose em {
+  font-style: italic;
+}
+html.light .blog-prose a {
+  color: #0891B2;
+}
+html.light .blog-prose a:hover {
+  color: #0E7490;
+}

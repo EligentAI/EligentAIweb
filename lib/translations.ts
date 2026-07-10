@@ -16,6 +16,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       technology: "Technology",
       about: "About",
       contact: "Contact",
+      blog: "Blog",
       bookDemo: "Book a Demo",
     },
     hero: {
@@ -341,6 +342,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       technology: "Tecnología",
       about: "Nosotros",
       contact: "Contacto",
+      blog: "Blog",
       bookDemo: "Reservar Demo",
     },
     hero: {
@@ -654,6 +656,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       technology: "Technologie",
       about: "À Propos",
       contact: "Contact",
+      blog: "Blog",
       bookDemo: "Réserver une Démo",
     },
     hero: {

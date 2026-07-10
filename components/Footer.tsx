@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Mail, ArrowUp, MapPin, Clock, Zap } from "lucide-react";
 import { FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -7,9 +9,16 @@ import { useLanguage } from "@/lib/language-provider";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const scrollTo = (href: string) => {
-    document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+    const id = href.replace("#", "");
+    if (pathname !== "/") {
+      router.push("/" + href);
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -37,6 +46,13 @@ export default function Footer() {
                 eligentai.com
               </a>
             </p>
+            <Link
+              href="/blog"
+              className="text-[13px] font-medium w-fit underline underline-offset-2"
+              style={{ color: "#22D3EE" }}
+            >
+              {t.nav.blog || "Blog"} — AI Front Desk insights
+            </Link>
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
