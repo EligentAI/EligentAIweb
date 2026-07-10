@@ -22,8 +22,10 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Services />
-      <WhatsAppSpotlight />
+      {/* Shipped work first — the live flagship leads; the WhatsApp
+          receptionist stays below as the coming-soon roadmap teaser. */}
       <Projects />
+      <WhatsAppSpotlight />
       <CaseStudies />
       <Technology />
       <Process />
