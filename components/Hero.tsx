@@ -39,9 +39,10 @@ export default function Hero() {
           : "radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,255,178,0.10) 0%, rgba(77,110,255,0.07) 40%, transparent 70%)",
       }} />
 
-      {/* Floating orbs */}
+      {/* Floating orbs — desktop only. filter:blur + infinite transform
+          thrash mobile GPUs and tear text in later sections (project cards). */}
       <motion.div
-        className="absolute pointer-events-none rounded-full"
+        className="absolute pointer-events-none rounded-full hidden lg:block"
         style={{
           width: 300, height: 300, top: "15%", left: "5%",
           background: isLight
@@ -53,7 +54,7 @@ export default function Hero() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute pointer-events-none rounded-full"
+        className="absolute pointer-events-none rounded-full hidden lg:block"
         style={{
           width: 250, height: 250, bottom: "20%", right: "5%",
           background: isLight
