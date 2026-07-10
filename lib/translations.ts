@@ -19,11 +19,11 @@ export const translations: Record<Locale, Record<string, any>> = {
       bookDemo: "Book a Demo",
     },
     hero: {
-      badge: "AI Engineering Studio",
+      badge: "AI Engineering Studio · EligentAI",
       headline1: "We Build AI Systems That",
       headline2: "Answer, Automate & Analyze",
       headline3: "for Your Business — 24/7",
-      sub: "From WhatsApp AI receptionists to customer support automation and analytics copilots — we design, build, and deploy production AI systems. Fixed price. You own the code.",
+      sub: "Eligent AI (EligentAI) delivers production AI services: WhatsApp AI receptionist, custom AI agents, business automation, AI customer support, and analytics copilots. Fixed price. You own the code. Live demos at eligentai.com.",
       cta1: "See Live Demos",
       cta2: "Book a Free Strategy Call",
       scrollLabel: "Explore",
@@ -35,8 +35,8 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     services: {
       sectionLabel: "What We Build",
-      title: "AI Systems We Build",
-      sub: "Focused engineering on intelligent systems that connect AI reasoning with real business data.",
+      title: "AI Services & Systems We Build",
+      sub: "AI agent development, automation, AI receptionist, and intelligent systems that connect AI reasoning with real business data — engineered by Eligent AI.",
       learnMore: "Learn more",
       items: [
         {
@@ -62,12 +62,12 @@ export const translations: Record<Locale, Record<string, any>> = {
         {
           title: "AI Business Process Automation",
           description:
-            "End-to-end workflow automation that connects AI reasoning with your business data, triggering actions, generating reports, and surfacing anomalies automatically.",
+            "End-to-end workflow automation and AI process automation that connects AI reasoning with your business data, triggering actions, generating reports, and surfacing anomalies automatically.",
         },
         {
           title: "Custom AI Agents",
           description:
-            "Purpose-built AI agents with tool-use capabilities — able to query databases, call APIs, analyze documents, and execute multi-step reasoning tasks autonomously.",
+            "Purpose-built AI agents with tool-use capabilities — able to query databases, call APIs, analyze documents, and execute multi-step reasoning tasks autonomously for your business.",
         },
       ],
     },
@@ -115,8 +115,8 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     projects: {
       sectionLabel: "Our Work",
-      title: "Our AI Systems",
-      sub: "End-to-end AI systems built and deployed for real business needs — try the live demos yourself.",
+      title: "AI Agents & Production Systems",
+      sub: "End-to-end AI services built by Eligent AI — AI front desk, support agents, analytics, and automation. Try the live demos yourself.",
       status: "Production",
       flagship: "Flagship Build",
       stackLabel: "Tech Stack",
@@ -270,27 +270,38 @@ export const translations: Record<Locale, Record<string, any>> = {
     about: {
       sectionLabel: "Who We Are",
       title: "About Eligent AI",
-      body1: "Eligent AI is a specialized AI engineering studio focused on building intelligent systems for modern businesses.",
+      body1:
+        "Eligent AI (also known as EligentAI, eligentai.com) is an AI engineering studio focused on AI services for modern businesses — from AI receptionist systems to full automation stacks.",
       body2Prefix: "We specialize in",
-      body2Items: ["AI agents", "RAG systems", "data analytics automation", "AI-powered knowledge assistants"],
+      body2Items: [
+        "AI agents",
+        "AI automation",
+        "AI receptionist & WhatsApp AI",
+        "RAG systems & knowledge assistants",
+      ],
       body2Connector: "and",
-      body3: "Our mission is to help companies transform their data and knowledge into intelligent systems — practical tools that work reliably in production.",
+      body3:
+        "Our mission is to help companies turn data and knowledge into production AI systems — practical AI agents and automation that answer customers, book appointments, and run workflows reliably.",
       founderName: "Shadab Khan",
       founderRole: "Founder & AI Engineer",
-      founderBio: "Every project is architected, built, and shipped by the founder directly — one point of contact, full accountability, no handoffs.",
+      founderBio:
+        "Every AI service project is architected, built, and shipped by the founder directly — one point of contact, full accountability, no handoffs.",
       founderCta: "Connect on LinkedIn",
       values: [
         {
           title: "Focused Execution",
-          description: "We work on a small number of AI projects at a time to deliver focused, high-quality engineering — not rushed deliverables.",
+          description:
+            "We work on a small number of AI projects at a time to deliver focused, high-quality engineering — not rushed deliverables.",
         },
         {
           title: "Engineering First",
-          description: "Every AI system we build starts with rigorous architecture design. We believe robust foundations produce reliable AI systems.",
+          description:
+            "Every AI agent and automation system starts with rigorous architecture. Robust foundations produce reliable AI services in production.",
         },
         {
           title: "AI That Works",
-          description: "Our goal is systems that actually run in production. We build for reliability, not just demos — every project is designed to last.",
+          description:
+            "Our goal is systems that actually run in production. We build AI receptionist, support, and agent systems for reliability — not just demos.",
         },
       ],
     },
@@ -312,7 +323,8 @@ export const translations: Record<Locale, Record<string, any>> = {
       sendAnother: "Send another message",
     },
     footer: {
-      tagline: "AI engineering studio building WhatsApp AI receptionists, customer support automation, and custom AI systems for modern businesses.",
+      tagline:
+        "Eligent AI (EligentAI) — AI services, AI agents, automation, and WhatsApp AI receptionist systems for modern businesses. eligentai.com",
       navTitle: "Navigation",
       connectTitle: "Connect",
       copyright: "All rights reserved.",

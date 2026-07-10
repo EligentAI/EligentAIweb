@@ -31,27 +31,62 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Eligent AI — WhatsApp AI Receptionist, Customer Support AI & Custom AI Agents",
-    template: "%s | Eligent AI",
+    default:
+      "Eligent AI (EligentAI) — AI Services, AI Agents, Automation & AI Receptionist",
+    template: "%s | Eligent AI | EligentAI",
   },
   description:
-    "We build production AI systems that win you time and customers: WhatsApp AI receptionists that answer & book appointments 24/7, AI customer support automation, analytics copilots, and custom AI agents. Fixed price — you own the code.",
+    "Eligent AI (EligentAI) builds production AI services: WhatsApp AI receptionist, custom AI agents, business process automation, AI customer support, RAG knowledge assistants, and AI analytics. Fixed price — you own the code. Live demos at eligentai.com.",
   keywords: [
+    // Brand (spaced + one-word for discovery)
+    "Eligent AI",
+    "EligentAI",
+    "eligentai",
+    "eligentai.com",
+    "Eligent",
+    // Core service intents
+    "AI services",
+    "AI service company",
+    "AI agency",
+    "AI automation",
+    "business automation AI",
+    "AI process automation",
+    "workflow automation AI",
+    // Agents & chat
+    "AI agent",
+    "AI agents",
+    "custom AI agents",
+    "AI chatbot for business",
+    "conversational AI",
+    // Receptionist / booking
+    "AI receptionist",
     "WhatsApp AI receptionist",
-    "AI customer support automation",
-    "AI automation agency",
     "AI receptionist for clinics",
     "AI appointment booking",
-    "custom AI agents",
+    "virtual AI receptionist",
+    "AI front desk",
+    // Support & knowledge
+    "AI customer support",
+    "AI customer support automation",
+    "AI support agent",
     "RAG systems",
+    "AI knowledge assistant",
+    // Analytics & stack
     "AI analytics dashboard",
+    "natural language SQL",
     "LangChain",
     "LangGraph",
-    "AI chatbot for business",
-    "Eligent AI",
+    "OpenAI agents",
+    // Geo / buyer modifiers
+    "AI development company India",
+    "hire AI engineer",
+    "AI automation agency",
   ],
   authors: [{ name: "Shadab Khan", url: "https://www.linkedin.com/in/shadabkhanai" }],
   creator: "Eligent AI",
+  publisher: "Eligent AI",
+  category: "technology",
+  applicationName: "Eligent AI",
   alternates: {
     canonical: "/",
   },
@@ -59,17 +94,27 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    title: "Eligent AI — WhatsApp AI Receptionists, Customer Support AI & Custom AI Agents",
+    title:
+      "Eligent AI (EligentAI) — AI Services, AI Agents, Automation & AI Receptionist",
     description:
-      "Production AI systems that answer customers, book appointments, and automate support 24/7. Live demos, fixed pricing, 100% code ownership.",
-    siteName: "Eligent AI",
+      "Production AI services: AI receptionist on WhatsApp, custom AI agents, support automation, RAG assistants, and analytics copilots. Live demos · fixed pricing · full code ownership.",
+    siteName: "Eligent AI | EligentAI",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Eligent AI (EligentAI) — AI services, agents, automation & receptionist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eligent AI — AI Systems That Answer, Automate & Analyze",
+    title: "Eligent AI (EligentAI) — AI Services, Agents & Automation",
     description:
-      "WhatsApp AI receptionists, customer support automation, and custom AI agents — built for production, with live demos.",
+      "AI receptionist, custom AI agents, business automation, and AI support systems — built for production with live demos at eligentai.com.",
     images: ["/opengraph-image"],
+    creator: "@eligentai",
   },
   robots: {
     index: true,
@@ -88,32 +133,61 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: "Eligent AI",
-      alternateName: ["EligentAI", "eligentai", "Eligent"],
+      legalName: "Eligent AI",
+      alternateName: ["EligentAI", "eligentai", "Eligent", "Eligent AI Studio"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo2.png`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo2.png`,
+      },
+      image: `${SITE_URL}/logo2.png`,
       email: "contact@eligentai.com",
       description:
-        "AI engineering studio building production AI systems: WhatsApp AI receptionists, customer support automation, analytics copilots, and custom AI agents.",
+        "Eligent AI (EligentAI) is an AI engineering studio offering AI services, custom AI agents, business automation, WhatsApp AI receptionist systems, AI customer support, RAG knowledge assistants, and AI analytics for businesses worldwide.",
+      slogan: "AI systems that answer, automate & analyze — 24/7",
+      knowsAbout: [
+        "AI services",
+        "AI agents",
+        "AI automation",
+        "AI receptionist",
+        "WhatsApp AI",
+        "Business process automation",
+        "Customer support AI",
+        "RAG",
+        "LangChain",
+        "LangGraph",
+      ],
       founder: { "@id": `${SITE_URL}/#founder` },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Lucknow",
+        addressRegion: "Uttar Pradesh",
         addressCountry: "IN",
       },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: "contact@eligentai.com",
-        availableLanguage: ["English", "Hindi", "Spanish", "French"],
-      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: "contact@eligentai.com",
+          availableLanguage: ["English", "Hindi", "Spanish", "French"],
+          url: SITE_URL,
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "contact@eligentai.com",
+          availableLanguage: ["English", "Hindi"],
+        },
+      ],
       sameAs: [
         "https://www.linkedin.com/in/shadabkhanai",
         "https://twitter.com/eligentai",
         "https://instagram.com/eligentai",
         "https://youtube.com/@eligentai",
+        "https://github.com/EligentAI",
       ],
     },
     {
@@ -124,9 +198,12 @@ const structuredData = {
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       description:
-        "Shadab Khan is the founder of Eligent AI, an AI engineering studio in Lucknow, India. He builds WhatsApp AI receptionists, AI customer support systems, and custom AI agents for businesses worldwide.",
+        "Shadab Khan is the founder of Eligent AI (EligentAI). He builds AI services, AI agents, AI receptionist systems, and automation for businesses worldwide from Lucknow, India.",
       knowsAbout: [
+        "AI services",
         "AI agents",
+        "AI automation",
+        "AI receptionist",
         "WhatsApp AI receptionists",
         "AI customer support automation",
         "RAG systems",
@@ -146,18 +223,35 @@ const structuredData = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "Eligent AI",
-      alternateName: ["EligentAI", "eligentai.com"],
+      alternateName: ["EligentAI", "eligentai", "eligentai.com", "Eligent AI"],
+      description:
+        "Official website of Eligent AI (EligentAI) — AI services, AI agents, automation, and AI receptionist solutions.",
       publisher: { "@id": `${SITE_URL}/#organization` },
-      inLanguage: "en",
+      inLanguage: ["en", "es", "fr"],
     },
     {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#service`,
-      name: "Eligent AI",
+      name: "Eligent AI — AI Services & Custom AI Agents",
+      alternateName: "EligentAI AI Services",
       url: SITE_URL,
       image: `${SITE_URL}/logo2.png`,
       priceRange: "$$",
-      areaServed: "Worldwide",
+      areaServed: {
+        "@type": "Place",
+        name: "Worldwide",
+      },
+      serviceType: [
+        "AI services",
+        "AI agent development",
+        "AI automation",
+        "AI receptionist",
+        "WhatsApp AI chatbot",
+        "Customer support automation",
+        "RAG knowledge systems",
+        "AI analytics",
+      ],
+      provider: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Lucknow",
@@ -169,8 +263,32 @@ const structuredData = {
           itemOffered: {
             "@type": "Service",
             name: "WhatsApp AI Receptionist",
+            alternateName: ["AI receptionist", "virtual AI receptionist", "AI front desk"],
             description:
-              "24/7 AI receptionist on WhatsApp that answers inquiries instantly, books appointments, qualifies leads, and hands off to humans — for clinics, salons, real estate, hotels, and local businesses.",
+              "24/7 AI receptionist on WhatsApp that answers inquiries instantly, books appointments, qualifies leads, and hands off to humans — for clinics, hospitals, salons, real estate, hotels, and local businesses.",
+            serviceType: "AI receptionist",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom AI Agents",
+            alternateName: ["AI agent development", "autonomous AI agents"],
+            description:
+              "Purpose-built AI agents with tool use: query databases, call APIs, analyze documents, and execute multi-step tasks autonomously for your business workflows.",
+            serviceType: "AI agents",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Business Process Automation",
+            alternateName: ["AI automation", "workflow automation AI"],
+            description:
+              "End-to-end AI automation connecting reasoning with business data — triggering actions, generating reports, and surfacing anomalies automatically.",
+            serviceType: "AI automation",
           },
         },
         {
@@ -180,6 +298,7 @@ const structuredData = {
             name: "AI Customer Support Automation",
             description:
               "AI support systems that resolve routine customer tickets automatically with confidence scoring, human escalation, and CSAT analytics.",
+            serviceType: "AI customer support",
           },
         },
         {
@@ -189,6 +308,7 @@ const structuredData = {
             name: "AI Analytics Dashboards",
             description:
               "Natural-language business analytics: ask questions in plain English, get SQL, charts, and AI-driven insights automatically.",
+            serviceType: "AI analytics",
           },
         },
         {
@@ -197,25 +317,18 @@ const structuredData = {
             "@type": "Service",
             name: "AI Knowledge Assistants",
             description:
-              "RAG-powered assistants that answer questions from company documents, wikis, and internal knowledge bases.",
+              "RAG-powered AI assistants that answer questions from company documents, wikis, and internal knowledge bases.",
+            serviceType: "RAG AI assistant",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Business Process Automation",
+            name: "AI Front Desk for Clinics & Hospitals",
             description:
-              "End-to-end workflow automation connecting AI reasoning with business data — triggering actions, generating reports, surfacing anomalies.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Custom AI Agents",
-            description:
-              "Purpose-built AI agents with tool use: query databases, call APIs, analyze documents, and execute multi-step tasks autonomously.",
+              "Multi-tenant AI front desk that answers patients 24/7 from clinic knowledge bases, books appointments with real doctor schedules, and alerts staff on Telegram.",
+            serviceType: "AI front desk",
           },
         },
       ],
@@ -226,10 +339,26 @@ const structuredData = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "What AI services does Eligent AI (EligentAI) offer?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Eligent AI builds production AI services including WhatsApp AI receptionists, custom AI agents, business process automation, AI customer support systems, RAG knowledge assistants, and AI analytics dashboards. You get fixed pricing and full code ownership.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "Can you build a WhatsApp AI receptionist for my clinic or local business?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes — it's our flagship solution. Your AI receptionist answers on WhatsApp 24/7: it greets patients or customers, answers common questions, books appointments into your calendar, qualifies leads, and hands over to a human when needed. It works great for clinics, hospitals, salons, real estate agencies, hotels, and any business whose customers live on WhatsApp.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do you build custom AI agents and automation?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We design and deploy custom AI agents that use tools (databases, APIs, documents) and AI automation that runs multi-step business workflows end-to-end — from lead handling to reporting.",
           },
         },
         {

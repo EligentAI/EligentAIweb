@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Eligent AI — AI Systems for Business",
-    short_name: "Eligent AI",
+    name: "Eligent AI (EligentAI) — AI Services & Agents",
+    short_name: "EligentAI",
     description:
-      "AI engineering studio building WhatsApp AI receptionists, customer support automation, and custom AI agents.",
+      "Eligent AI builds AI services, custom AI agents, business automation, and WhatsApp AI receptionist systems.",
     start_url: "/",
     display: "standalone",
     background_color: "#04040A",

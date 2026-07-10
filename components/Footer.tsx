@@ -22,7 +22,7 @@ export default function Footer() {
           {/* ── Col 1: Brand + social icons ── */}
           <div className="flex flex-col gap-5">
             <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 w-fit">
-              <img src="/logo2.png" alt="Eligent AI" className="h-16 w-auto" />
+              <img src="/logo2.png" alt="Eligent AI (EligentAI) logo" className="h-16 w-auto" />
               <span className="font-syne font-bold text-[30px] tracking-tight" style={{ color: "var(--color-text-primary)" }}>
                 Eligent <span style={{ color: "var(--color-mint)" }}>AI</span>
               </span>
@@ -30,6 +30,12 @@ export default function Footer() {
 
             <p className="text-[14px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
               {t.footer.tagline}
+            </p>
+            <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
+              Brand: Eligent AI · EligentAI ·{" "}
+              <a href="https://eligentai.com" className="underline underline-offset-2" style={{ color: "var(--color-mint)" }}>
+                eligentai.com
+              </a>
             </p>
 
             {/* Social icon buttons */}

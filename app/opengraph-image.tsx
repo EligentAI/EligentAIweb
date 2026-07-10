@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Eligent AI — AI Systems That Answer, Automate & Analyze for Your Business";
+export const alt =
+  "Eligent AI (EligentAI) — AI services, AI agents, automation & AI receptionist for business";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
