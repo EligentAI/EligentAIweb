@@ -166,6 +166,11 @@ section[id] { scroll-margin-top: 80px; }
   }
   .glass-card { background: var(--color-surface); }
   .noise-overlay { display: none; }
+  /* Infinite animations force continuous tile repaints — off on mobile. */
+  .animate-ping, .animate-pulse, .animate-bounce, .glow-dot { animation: none !important; }
+  .animate-ping { display: none !important; }
+  /* Translucent tiles composite over the card and shimmer on some GPUs. */
+  .feature-tile { background: var(--color-surface2) !important; }
 }
 .glass-card-hover:hover {
   background: var(--color-card-hover-bg);

@@ -163,7 +163,7 @@ export default function Projects() {
                       {proj.features.map((feat: string, k: number) => {
                         const Icon = meta.icons[k];
                         return (
-                          <div key={k} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: meta.dim, border: "1px solid " + meta.border }}>
+                          <div key={k} className="feature-tile flex items-center gap-3 p-3 rounded-xl" style={{ background: meta.dim, border: "1px solid " + meta.border }}>
                             <Icon size={14} style={{ color: meta.accent, flexShrink: 0 }} />
                             <span className="text-[12px] font-medium" style={{ color: meta.accent }}>{feat}</span>
                           </div>
