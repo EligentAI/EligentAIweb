@@ -34,10 +34,14 @@ export default function FrontDeskDemo() {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const sessionRef = useRef<Session | null>(null);
-  const endRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
+  // Scroll ONLY the message list (never the page — scrollIntoView on mount
+  // was yanking the whole portfolio down to this card on load).
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (messages.length === 0 && !busy) return;
+    const el = listRef.current;
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
   }, [messages, busy]);
 
   // Numbered menus from the booking flow ("1. Cardiology", "2. …") become
@@ -128,7 +132,7 @@ export default function FrontDeskDemo() {
       </div>
 
       {/* Messages */}
-      <div className="flex flex-col gap-2.5 px-4 py-3 h-[240px] overflow-y-auto">
+      <div ref={listRef} className="flex flex-col gap-2.5 px-4 py-3 h-[240px] overflow-y-auto">
         {messages.length === 0 && (
           <p className="text-[12px] leading-relaxed m-auto text-center px-6" style={{ color: "var(--color-text-muted)" }}>
             {d.hint}
@@ -163,7 +167,6 @@ export default function FrontDeskDemo() {
             </div>
           </div>
         )}
-        <div ref={endRef} />
       </div>
 
       {/* Suggested chips */}
