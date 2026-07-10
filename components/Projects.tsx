@@ -119,26 +119,28 @@ export default function Projects() {
             return (
               <motion.div
                 key={meta.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="glass-card rounded-3xl overflow-hidden"
+                /* Opacity only — y/transform promotes compositor layers that
+                   tear long description text + feature tiles on Android GPUs. */
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="project-card glass-card rounded-3xl overflow-hidden"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
 
-                  {/* Left — content */}
-                  <div className="p-8 lg:p-10 flex flex-col gap-6">
+                  {/* Left — content (solid layers; no alpha fills that shimmer on Adreno) */}
+                  <div className="project-card-body p-8 lg:p-10 flex flex-col gap-6">
 
                     {/* Status badge */}
                     <div className="flex items-center gap-3 flex-wrap">
                       {meta.flagship && (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-full tracking-wide" style={{ background: "rgba(251,191,36,0.10)", border: "1px solid rgba(251,191,36,0.30)", color: "#FBBF24" }}>
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-full tracking-wide" style={{ background: "var(--color-surface2)", border: "1px solid rgba(251,191,36,0.35)", color: "#FBBF24" }}>
                           <Star size={11} fill="currentColor" />
                           {t.projects.flagship}
                         </span>
                       )}
-                      <span className="px-3 py-1 text-[11px] font-medium rounded-full tracking-wide" style={{ background: meta.dim, border: "1px solid " + meta.border, color: meta.accent }}>
+                      <span className="px-3 py-1 text-[11px] font-medium rounded-full tracking-wide" style={{ background: "var(--color-surface2)", border: "1px solid " + meta.border, color: meta.accent }}>
                         {t.projects.status}
                       </span>
                       <span className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>{proj.subtitle}</span>
@@ -149,21 +151,21 @@ export default function Projects() {
                       <h3 className="font-syne font-bold text-[30px] sm:text-[34px] leading-tight tracking-[-0.02em]" style={{ color: "var(--color-text-primary)" }}>
                         {meta.title}
                       </h3>
-                      <a href={meta.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: meta.btnBg, border: "1px solid " + meta.btnBorder, color: meta.btnColor }}>
+                      <a href={meta.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-colors duration-300" style={{ background: meta.btnBg, border: "1px solid " + meta.btnBorder, color: meta.btnColor }}>
                         <ExternalLink size={12} />
                         Live Demo
                       </a>
                     </div>
 
                     {/* Description */}
-                    <p className="text-[15px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{proj.description}</p>
+                    <p className="project-card-desc text-[15px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{proj.description}</p>
 
                     {/* Features */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {proj.features.map((feat: string, k: number) => {
                         const Icon = meta.icons[k];
                         return (
-                          <div key={k} className="feature-tile flex items-center gap-3 p-3 rounded-xl" style={{ background: meta.dim, border: "1px solid " + meta.border }}>
+                          <div key={k} className="feature-tile flex items-center gap-3 p-3 rounded-xl" style={{ background: "var(--color-surface2)", border: "1px solid " + meta.border }}>
                             <Icon size={14} style={{ color: meta.accent, flexShrink: 0 }} />
                             <span className="text-[12px] font-medium" style={{ color: meta.accent }}>{feat}</span>
                           </div>
@@ -176,7 +178,7 @@ export default function Projects() {
                       <p className="text-[11px] uppercase tracking-widest mb-3" style={{ color: "var(--color-text-muted)" }}>{t.projects.stackLabel}</p>
                       <div className="flex flex-wrap gap-2">
                         {meta.stack.map((tech) => (
-                          <span key={tech} className="px-2.5 py-1 text-[11px] rounded-md" style={{ background: "var(--color-input-bg)", border: "1px solid var(--color-border)", color: "var(--color-text-secondary)" }}>
+                          <span key={tech} className="px-2.5 py-1 text-[11px] rounded-md" style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)", color: "var(--color-text-secondary)" }}>
                             {tech}
                           </span>
                         ))}
@@ -186,12 +188,23 @@ export default function Projects() {
                   </div>
 
                   {/* Right — live demo (flagship) or screenshot */}
-                  <div className="relative min-h-[280px] lg:min-h-0 flex items-center justify-center py-8 lg:py-10" style={{ background: "linear-gradient(135deg, " + meta.dim + " 0%, var(--color-surface2) 60%)", borderLeft: "1px solid var(--color-border)" }}>
-                    <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(128,128,128,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+                  <div
+                    className="project-card-media relative min-h-[280px] lg:min-h-0 flex items-center justify-center py-8 lg:py-10"
+                    style={{ background: "var(--color-surface2)", borderLeft: "1px solid var(--color-border)" }}
+                  >
+                    {/* Grid pattern — desktop only; continuous bg layers cost mobile GPUs */}
+                    <div
+                      className="absolute inset-0 hidden lg:block pointer-events-none"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(rgba(128,128,128,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.03) 1px, transparent 1px)",
+                        backgroundSize: "32px 32px",
+                      }}
+                      aria-hidden="true"
+                    />
                     {"demo" in meta && meta.demo ? (
                       <>
-                        {/* Decorative backdrop — desktop only; filter-blur layers
-                            flicker on mobile GPUs. */}
+                        {/* Decorative backdrop — desktop only */}
                         <img
                           src={meta.img}
                           alt=""

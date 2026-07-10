@@ -156,9 +156,10 @@ section[id] { scroll-margin-top: 80px; }
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* Mobile GPUs corrupt backdrop-filter/filter layers when combined with
-   animated transforms (glitchy pixel noise, flicker). Kill EVERY such layer
-   on small screens — solid surfaces instead. Desktop keeps the glass look. */
-@media (max-width: 1024px) {
+   animated transforms (glitchy pixel noise, flicker, pixel tearing).
+   Kill expensive effects on small screens + coarse-pointer devices.
+   Desktop keeps the glass look. */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
   *, *::before, *::after {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -169,8 +170,38 @@ section[id] { scroll-margin-top: 80px; }
   /* Infinite animations force continuous tile repaints — off on mobile. */
   .animate-ping, .animate-pulse, .animate-bounce, .glow-dot { animation: none !important; }
   .animate-ping { display: none !important; }
-  /* Translucent tiles composite over the card and shimmer on some GPUs. */
+  /* Solid tiles — translucent rgba fills shimmer/tear on Adreno/Mali. */
   .feature-tile { background: var(--color-surface2) !important; }
+
+  /*
+   * Project cards: parent transform/opacity layers tear long body copy and
+   * feature rows (AI Front Desk description + bullets) while scrolling.
+   * Flatten compositor work — no filter, no 3d, stable paint.
+   */
+  .project-card {
+    transform: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    perspective: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    background: var(--color-surface) !important;
+    /* contain helps browsers skip offscreen card work without layer thrash */
+    contain: layout style;
+  }
+  .project-card-body,
+  .project-card-desc,
+  .project-card .feature-tile {
+    transform: none !important;
+    filter: none !important;
+    /* Force text onto a stable raster path on Chrome Android */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .project-card-media {
+    background: var(--color-surface2) !important;
+    transform: none !important;
+  }
 }
 .glass-card-hover:hover {
   background: var(--color-card-hover-bg);

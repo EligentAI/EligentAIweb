@@ -176,7 +176,7 @@ export default function FrontDeskDemo() {
             <button
               key={c}
               onClick={() => send(c)}
-              className="px-2.5 py-1 text-[11px] font-medium rounded-full transition-all duration-200 hover:-translate-y-0.5"
+              className="px-2.5 py-1 text-[11px] font-medium rounded-full transition-colors duration-200"
               style={{ background: "rgba(6,182,212,0.08)", border: "1px solid rgba(6,182,212,0.3)", color: ACCENT }}
             >
               {c}
@@ -192,7 +192,7 @@ export default function FrontDeskDemo() {
             <button
               key={o.n}
               onClick={() => send(o.n)}
-              className="px-2.5 py-1 text-[11px] font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5"
+              className="px-2.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200"
               style={{ background: "rgba(6,182,212,0.12)", border: "1px solid rgba(6,182,212,0.4)", color: ACCENT }}
             >
               {o.label}
