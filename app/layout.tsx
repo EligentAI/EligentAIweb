@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { LanguageProvider } from "@/lib/language-provider";
+import MotionProvider from "@/components/MotionProvider";
 
 const SITE_URL = "https://eligentai.com";
 
@@ -298,8 +299,10 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <LanguageProvider>
+            <MotionProvider>
             <div className="noise-overlay" aria-hidden="true" />
             {children}
+          </MotionProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>
