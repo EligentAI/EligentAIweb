@@ -19,7 +19,7 @@ export const posts: BlogPost[] = [
     slug: "ai-front-desk-vs-human-receptionist",
     title: "AI Front Desk vs Human Receptionist: What Clinics Actually Need in 2026",
     description:
-      "Honest comparison of AI front desk systems vs human receptionists for clinics and hospitals — coverage, booking accuracy, cost, patient experience, and when you still need people. From Eligent AI (EligentAI).",
+      "Honest comparison of AI front desk systems vs human receptionists for clinics and hospitals — coverage, booking accuracy, cost, patient experience, and when you still need people. From Eligent AI.",
     excerpt:
       "Missed calls after hours. Double bookings. Staff buried in the same five questions. Here's a clear, practical comparison of AI front desk vs human reception — and how modern clinics use both.",
     date: "2026-07-11",

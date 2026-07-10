@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.author}
                 </p>
                 <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
-                  Founder, Eligent AI (EligentAI)
+                  Founder, Eligent AI
                 </p>
               </div>
             </div>

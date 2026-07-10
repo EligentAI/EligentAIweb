@@ -20,11 +20,11 @@ export const translations: Record<Locale, Record<string, any>> = {
       bookDemo: "Book a Demo",
     },
     hero: {
-      badge: "AI Engineering Studio · EligentAI",
+      badge: "AI Engineering Studio",
       headline1: "We Build AI Systems That",
       headline2: "Answer, Automate & Analyze",
       headline3: "for Your Business — 24/7",
-      sub: "Eligent AI (EligentAI) delivers production AI services: WhatsApp AI receptionist, custom AI agents, business automation, AI customer support, and analytics copilots. Fixed price. You own the code. Live demos at eligentai.com.",
+      sub: "From WhatsApp AI receptionists to customer support automation and analytics copilots — we design, build, and deploy production AI systems. Fixed price. You own the code.",
       cta1: "See Live Demos",
       cta2: "Book a Free Strategy Call",
       scrollLabel: "Explore",
@@ -272,7 +272,7 @@ export const translations: Record<Locale, Record<string, any>> = {
       sectionLabel: "Who We Are",
       title: "About Eligent AI",
       body1:
-        "Eligent AI (also known as EligentAI, eligentai.com) is an AI engineering studio focused on AI services for modern businesses — from AI receptionist systems to full automation stacks.",
+        "Eligent AI is a specialized AI engineering studio focused on AI services for modern businesses — from AI receptionist systems to full automation stacks.",
       body2Prefix: "We specialize in",
       body2Items: [
         "AI agents",
@@ -325,7 +325,7 @@ export const translations: Record<Locale, Record<string, any>> = {
     },
     footer: {
       tagline:
-        "Eligent AI (EligentAI) — AI services, AI agents, automation, and WhatsApp AI receptionist systems for modern businesses. eligentai.com",
+        "AI engineering studio building AI services, AI agents, automation, and WhatsApp AI receptionist systems for modern businesses.",
       navTitle: "Navigation",
       connectTitle: "Connect",
       copyright: "All rights reserved.",

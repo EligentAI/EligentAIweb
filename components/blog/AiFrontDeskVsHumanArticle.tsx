@@ -79,7 +79,7 @@ export default function AiFrontDeskVsHumanArticle() {
       </p>
       <p>
         This guide is a practical comparison from{" "}
-        <strong>Eligent AI (EligentAI)</strong> — builders of a production{" "}
+        <strong>Eligent AI</strong> builds a production{" "}
         <Link href="/#projects">AI Front Desk</Link> already running for live
         clinics. No hype. Just what actually moves the needle for patients and
         staff.
@@ -489,15 +489,14 @@ export default function AiFrontDeskVsHumanArticle() {
         </li>
       </ol>
       <p>
-        <strong>Eligent AI (EligentAI)</strong> builds production AI systems —
-        AI front desk, support agents, and automation — with fixed pricing and
-        full code ownership. Explore more on{" "}
-        <Link href="/">eligentai.com</Link> or jump to{" "}
-        <Link href="/#projects">live projects</Link>.
+        <strong>Eligent AI</strong> builds production AI systems — AI front
+        desk, support agents, and automation — with fixed pricing and full code
+        ownership. Explore more on <Link href="/">eligentai.com</Link> or jump
+        to <Link href="/#projects">live projects</Link>.
       </p>
 
       <div className="not-prose mt-10 flex flex-wrap gap-2">
-        {["AI front desk", "AI receptionist", "Clinic automation", "Appointment booking", "EligentAI"].map(
+        {["AI front desk", "AI receptionist", "Clinic automation", "Appointment booking", "Eligent AI"].map(
           (tag) => (
             <span
               key={tag}

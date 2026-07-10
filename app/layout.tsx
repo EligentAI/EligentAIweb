@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Eligent AI (EligentAI) — AI Services, AI Agents, Automation & AI Receptionist",
-    template: "%s | Eligent AI | EligentAI",
+      "Eligent AI — AI Services, AI Agents, Automation & AI Receptionist",
+    template: "%s | Eligent AI",
   },
   description:
-    "Eligent AI (EligentAI) builds production AI services: WhatsApp AI receptionist, custom AI agents, business process automation, AI customer support, RAG knowledge assistants, and AI analytics. Fixed price — you own the code. Live demos at eligentai.com.",
+    "Eligent AI builds production AI services: WhatsApp AI receptionist, custom AI agents, business process automation, AI customer support, RAG knowledge assistants, and AI analytics. Fixed price — you own the code. Live demos at eligentai.com.",
   keywords: [
     // Brand (spaced + one-word for discovery)
     "Eligent AI",
@@ -94,23 +94,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    title:
-      "Eligent AI (EligentAI) — AI Services, AI Agents, Automation & AI Receptionist",
+    title: "Eligent AI — AI Services, AI Agents, Automation & AI Receptionist",
     description:
       "Production AI services: AI receptionist on WhatsApp, custom AI agents, support automation, RAG assistants, and analytics copilots. Live demos · fixed pricing · full code ownership.",
-    siteName: "Eligent AI | EligentAI",
+    siteName: "Eligent AI",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Eligent AI (EligentAI) — AI services, agents, automation & receptionist",
+        alt: "Eligent AI — AI services, agents, automation & receptionist",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eligent AI (EligentAI) — AI Services, Agents & Automation",
+    title: "Eligent AI — AI Services, Agents & Automation",
     description:
       "AI receptionist, custom AI agents, business automation, and AI support systems — built for production with live demos at eligentai.com.",
     images: ["/opengraph-image"],
@@ -146,7 +145,7 @@ const structuredData = {
       image: `${SITE_URL}/logo2.png`,
       email: "contact@eligentai.com",
       description:
-        "Eligent AI (EligentAI) is an AI engineering studio offering AI services, custom AI agents, business automation, WhatsApp AI receptionist systems, AI customer support, RAG knowledge assistants, and AI analytics for businesses worldwide.",
+        "Eligent AI is an AI engineering studio offering AI services, custom AI agents, business automation, WhatsApp AI receptionist systems, AI customer support, RAG knowledge assistants, and AI analytics for businesses worldwide.",
       slogan: "AI systems that answer, automate & analyze — 24/7",
       knowsAbout: [
         "AI services",
@@ -198,7 +197,7 @@ const structuredData = {
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       description:
-        "Shadab Khan is the founder of Eligent AI (EligentAI). He builds AI services, AI agents, AI receptionist systems, and automation for businesses worldwide from Lucknow, India.",
+        "Shadab Khan is the founder of Eligent AI. He builds AI services, AI agents, AI receptionist systems, and automation for businesses worldwide from Lucknow, India.",
       knowsAbout: [
         "AI services",
         "AI agents",
@@ -225,7 +224,7 @@ const structuredData = {
       name: "Eligent AI",
       alternateName: ["EligentAI", "eligentai", "eligentai.com", "Eligent AI"],
       description:
-        "Official website of Eligent AI (EligentAI) — AI services, AI agents, automation, and AI receptionist solutions.",
+        "Official website of Eligent AI — AI services, AI agents, automation, and AI receptionist solutions.",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: ["en", "es", "fr"],
     },
@@ -339,7 +338,7 @@ const structuredData = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What AI services does Eligent AI (EligentAI) offer?",
+          name: "What AI services does Eligent AI offer?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Eligent AI builds production AI services including WhatsApp AI receptionists, custom AI agents, business process automation, AI customer support systems, RAG knowledge assistants, and AI analytics dashboards. You get fixed pricing and full code ownership.",

@@ -7,7 +7,7 @@ import { formatBlogDate, getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog — AI Front Desk, AI Agents & Automation Insights",
   description:
-    "Practical guides from Eligent AI (EligentAI): AI front desk vs human receptionist, clinic automation, AI agents, and production AI systems. eligentai.com",
+    "Practical guides from Eligent AI: AI front desk vs human receptionist, clinic automation, AI agents, and production AI systems.",
   keywords: [
     "Eligent AI blog",
     "EligentAI",
@@ -61,9 +61,9 @@ export default function BlogIndexPage() {
               <span style={{ color: "#22D3EE" }}>in real clinics & businesses</span>
             </h1>
             <p className="text-[16px] leading-relaxed max-w-2xl" style={{ color: "var(--color-text-secondary)" }}>
-              No fluff. Practical writing from Eligent AI (EligentAI) on AI front
-              desk systems, agents, automation, and production deployments —
-              with live demos you can try.
+              No fluff. Practical writing from Eligent AI on AI front desk
+              systems, agents, automation, and production deployments — with
+              live demos you can try.
             </p>
           </div>
 

@@ -31,7 +31,7 @@ export default function Footer() {
           {/* ── Col 1: Brand + social icons ── */}
           <div className="flex flex-col gap-5">
             <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 w-fit">
-              <img src="/logo2.png" alt="Eligent AI (EligentAI) logo" className="h-16 w-auto" />
+              <img src="/logo2.png" alt="Eligent AI logo" className="h-16 w-auto" />
               <span className="font-syne font-bold text-[30px] tracking-tight" style={{ color: "var(--color-text-primary)" }}>
                 Eligent <span style={{ color: "var(--color-mint)" }}>AI</span>
               </span>
@@ -40,18 +40,12 @@ export default function Footer() {
             <p className="text-[14px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
               {t.footer.tagline}
             </p>
-            <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
-              Brand: Eligent AI · EligentAI ·{" "}
-              <a href="https://eligentai.com" className="underline underline-offset-2" style={{ color: "var(--color-mint)" }}>
-                eligentai.com
-              </a>
-            </p>
             <Link
               href="/blog"
               className="text-[13px] font-medium w-fit underline underline-offset-2"
               style={{ color: "#22D3EE" }}
             >
-              {t.nav.blog || "Blog"} — AI Front Desk insights
+              {t.nav.blog || "Blog"}
             </Link>
 
             {/* Social icon buttons */}
@@ -168,7 +162,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="pt-6 pb-24 sm:pb-6 sm:pr-24 2xl:pr-0 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid var(--color-border)" }}>
           <p className="text-[12px]" style={{ color: "var(--color-text-muted)" }}>
-            © {new Date().getFullYear()} EligentAI · eligentai.com · All rights reserved. Built with ❤️ in India.
+            © {new Date().getFullYear()} Eligent AI · eligentai.com · All rights reserved. Built with ❤️ in India.
           </p>
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-2 text-[12px] transition-colors hover:text-mint group" style={{ color: "var(--color-text-muted)" }}>
             Back to top
