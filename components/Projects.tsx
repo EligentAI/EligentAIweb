@@ -190,13 +190,15 @@ export default function Projects() {
                     <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(128,128,128,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
                     {"demo" in meta && meta.demo ? (
                       <>
+                        {/* Decorative backdrop — desktop only; filter-blur layers
+                            flicker on mobile GPUs. */}
                         <img
                           src={meta.img}
                           alt=""
                           aria-hidden="true"
                           loading="lazy"
-                          className="absolute inset-0 w-full h-full object-cover"
-                          style={{ opacity: 0.14, filter: "blur(2px)" }}
+                          className="absolute inset-0 w-full h-full object-cover hidden lg:block"
+                          style={{ opacity: 0.14 }}
                         />
                         <FrontDeskDemo />
                       </>
