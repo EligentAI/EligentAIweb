@@ -1,19 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, MessageCircle, BarChart2, FileSearch, Shield, FileText, ExternalLink, Workflow, Target, Users, LineChart, Star } from "lucide-react";
+import { Database, MessageCircle, BarChart2, FileSearch, Shield, FileText, ExternalLink, Workflow, Target, Users, LineChart, Star, Stethoscope, CalendarCheck, BellRing, MailCheck } from "lucide-react";
 import { useLanguage } from "@/lib/language-provider";
+import { translations } from "@/lib/translations";
+import FrontDeskDemo from "@/components/FrontDeskDemo";
 
+const FRONTDESK_URL = "https://himcity-hospital.vercel.app/";
 const SUPPORT_URL = "https://eligentai-support.vercel.app/";
 const PROJECT1_URL = "https://aibizanalyst.streamlit.app/";
 const PROJECT2_URL = "https://intelopsai.streamlit.app/";
+const FRONTDESK_IMG = "/front-desk-screenshot.jpg";
 const SUPPORT_IMG = "/support-ai-screenshot.png";
 const PROJECT1_IMG = "/ai-analyst-screenshot.png";
 const PROJECT2_IMG = "/opspilot-screenshot.png";
 
+const frontdeskStack = ["Python", "FastAPI", "LangGraph", "RAG", "OpenAI API", "PostgreSQL", "Next.js", "Telegram API"];
 const supportStack = ["Python", "LangGraph", "OpenAI API", "FastAPI", "Next.js", "PostgreSQL", "RAG"];
 const project1stack = ["Python", "LangChain", "OpenAI API", "PostgreSQL", "Neon DB", "Plotly", "Streamlit"];
 const project2stack = ["Python", "LangChain", "OpenAI API", "PostgreSQL", "Neon DB", "RAG Architecture", "Streamlit"];
+const frontdeskIcons = [MessageCircle, CalendarCheck, BellRing, MailCheck];
 const supportIcons = [Workflow, Target, Users, LineChart];
 const project1icons = [MessageCircle, BarChart2, Database, FileText];
 const project2icons = [FileSearch, Database, Shield, FileText];
@@ -23,9 +29,25 @@ export default function Projects() {
 
   const projects = [
     {
+      id: "ai-front-desk",
+      title: "AI Front Desk",
+      flagship: true,
+      demo: true,
+      icons: frontdeskIcons,
+      stack: frontdeskStack,
+      accent: "#06B6D4",
+      dim: "rgba(6,182,212,0.10)",
+      border: "rgba(6,182,212,0.22)",
+      url: FRONTDESK_URL,
+      img: FRONTDESK_IMG,
+      btnBg: "rgba(6,182,212,0.12)",
+      btnBorder: "rgba(6,182,212,0.35)",
+      btnColor: "#22D3EE",
+    },
+    {
       id: "eligent-support",
       title: "EligentAI Support",
-      flagship: true,
+      flagship: false,
       icons: supportIcons,
       stack: supportStack,
       accent: "#A855F7",
@@ -92,7 +114,8 @@ export default function Projects() {
 
         <div className="flex flex-col gap-8">
           {projects.map((meta, i) => {
-            const proj = t.projects.items[i];
+            // Locales that haven't translated a newer project yet fall back to English.
+            const proj = t.projects.items[i] || translations.en.projects.items[i];
             return (
               <motion.div
                 key={meta.id}
@@ -162,19 +185,33 @@ export default function Projects() {
 
                   </div>
 
-                  {/* Right — screenshot */}
-                  <div className="relative min-h-[280px] lg:min-h-0 flex items-center justify-center" style={{ background: "linear-gradient(135deg, " + meta.dim + " 0%, var(--color-surface2) 60%)", borderLeft: "1px solid var(--color-border)" }}>
+                  {/* Right — live demo (flagship) or screenshot */}
+                  <div className="relative min-h-[280px] lg:min-h-0 flex items-center justify-center py-8 lg:py-10" style={{ background: "linear-gradient(135deg, " + meta.dim + " 0%, var(--color-surface2) 60%)", borderLeft: "1px solid var(--color-border)" }}>
                     <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(128,128,128,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-                    <div className="relative z-10 w-[99%] max-w-[580px] p-2">
-                      <div className="rounded-xl overflow-hidden" style={{ border: "1px solid " + meta.border, boxShadow: "0 20px 60px rgba(0,0,0,0.35)" }}>
+                    {"demo" in meta && meta.demo ? (
+                      <>
                         <img
                           src={meta.img}
-                          alt={meta.title + " — " + proj.subtitle}
+                          alt=""
+                          aria-hidden="true"
                           loading="lazy"
-                          className="w-full block"
+                          className="absolute inset-0 w-full h-full object-cover"
+                          style={{ opacity: 0.14, filter: "blur(2px)" }}
                         />
+                        <FrontDeskDemo />
+                      </>
+                    ) : (
+                      <div className="relative z-10 w-[99%] max-w-[580px] p-2">
+                        <div className="rounded-xl overflow-hidden" style={{ border: "1px solid " + meta.border, boxShadow: "0 20px 60px rgba(0,0,0,0.35)" }}>
+                          <img
+                            src={meta.img}
+                            alt={meta.title + " — " + proj.subtitle}
+                            loading="lazy"
+                            className="w-full block"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                 </div>

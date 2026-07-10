@@ -120,7 +120,28 @@ export const translations: Record<Locale, Record<string, any>> = {
       status: "Production",
       flagship: "Flagship Build",
       stackLabel: "Tech Stack",
+      demo: {
+        badge: "Live",
+        title: "Try it right here",
+        subtitle: "Real system · HimCity Hospital demo",
+        hint: "This is the actual production AI — ask about timings, fees or doctors, or type 'book appointment'.",
+        placeholder: "Ask the front desk anything…",
+        chips: ["What are the OPD timings?", "Which insurance is accepted?", "Book an appointment"],
+        error: "Connection hiccup — please try again in a moment.",
+        noReply: "A staff member will reply in the live widget — try another question here!",
+      },
       items: [
+        {
+          subtitle: "AI Receptionist for Clinics & Hospitals",
+          description:
+            "A multi-tenant AI front desk that answers patients 24/7 from the clinic's own knowledge base — no made-up answers — and books appointments against real doctor schedules right inside the chat. Staff get instant Telegram alerts and confirm with one tap; patients receive automatic email confirmations. One line of code installs it on any website — three live clinics run on it today.",
+          features: [
+            "24/7 patient chat, grounded in clinic docs",
+            "In-chat booking with real time slots",
+            "Instant staff alerts on Telegram",
+            "One-tap confirm staff dashboard",
+          ],
+        },
         {
           subtitle: "AI Customer Support Platform",
           description:
@@ -412,7 +433,28 @@ export const translations: Record<Locale, Record<string, any>> = {
       status: "Producción",
       flagship: "Proyecto Insignia",
       stackLabel: "Tecnologías",
+      demo: {
+        badge: "En vivo",
+        title: "Pruébalo aquí mismo",
+        subtitle: "Sistema real · Demo HimCity Hospital",
+        hint: "Esta es la IA de producción real — pregunta por horarios, tarifas o médicos, o escribe 'book appointment'.",
+        placeholder: "Pregunta lo que quieras…",
+        chips: ["What are the OPD timings?", "Which insurance is accepted?", "Book an appointment"],
+        error: "Problema de conexión — inténtalo de nuevo en un momento.",
+        noReply: "Un miembro del personal responderá en el widget en vivo — ¡prueba otra pregunta aquí!",
+      },
       items: [
+        {
+          subtitle: "Recepcionista IA para Clínicas y Hospitales",
+          description:
+            "Una recepción con IA multi-tenant que responde a los pacientes 24/7 desde la base de conocimiento de la clínica — sin respuestas inventadas — y reserva citas con los horarios reales de los médicos dentro del chat. El personal recibe alertas instantáneas por Telegram y confirma con un clic; los pacientes reciben confirmaciones automáticas por correo. Una línea de código lo instala en cualquier web — hoy funciona en tres clínicas en vivo.",
+          features: [
+            "Chat de pacientes 24/7, basado en documentos",
+            "Reservas en el chat con horarios reales",
+            "Alertas instantáneas por Telegram",
+            "Panel del personal: confirmar en un clic",
+          ],
+        },
         {
           subtitle: "Plataforma de Soporte al Cliente con IA",
           description:
