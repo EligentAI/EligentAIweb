@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     description:
       "AI receptionist, custom AI agents, business automation, and AI support systems — built for production with live demos at eligentai.com.",
     images: ["/opengraph-image"],
-    creator: "@eligentai",
+    creator: "@shadabbuilds",
   },
   robots: {
     index: true,
@@ -183,21 +183,22 @@ const structuredData = {
       ],
       sameAs: [
         "https://www.linkedin.com/in/shadabkhanai",
-        "https://twitter.com/eligentai",
-        "https://instagram.com/eligentai",
+        "https://x.com/shadabbuilds",
         "https://youtube.com/@eligentai",
         "https://github.com/EligentAI",
+        "https://eligentai.com",
       ],
     },
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#founder`,
       name: "Shadab Khan",
+      alternateName: ["shadabbuilds", "Shadab Khan AI"],
       jobTitle: "Founder & AI Engineer",
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
       description:
-        "Shadab Khan is the founder of Eligent AI. He builds AI services, AI agents, AI receptionist systems, and automation for businesses worldwide from Lucknow, India.",
+        "Shadab Khan (shadabbuilds) is the founder of Eligent AI. He builds AI services, AI agents, AI front desk systems, and automation for businesses worldwide from Lucknow, India.",
       knowsAbout: [
         "AI services",
         "AI agents",
@@ -215,7 +216,11 @@ const structuredData = {
         addressLocality: "Lucknow",
         addressCountry: "IN",
       },
-      sameAs: ["https://www.linkedin.com/in/shadabkhanai"],
+      sameAs: [
+        "https://www.linkedin.com/in/shadabkhanai",
+        "https://x.com/shadabbuilds",
+        "https://youtube.com/@eligentai",
+      ],
     },
     {
       "@type": "WebSite",

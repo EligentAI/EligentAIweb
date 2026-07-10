@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { Mail, ArrowUp, MapPin, Clock, Zap } from "lucide-react";
-import { FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useLanguage } from "@/lib/language-provider";
 
@@ -42,22 +42,17 @@ export default function Footer() {
 
             {/* Social icon buttons */}
             <div className="flex items-center gap-3 flex-wrap">
-              <a href="https://www.linkedin.com/in/shadabkhanai" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+              <a href="https://www.linkedin.com/in/shadabkhanai" target="_blank" rel="noopener noreferrer" title="LinkedIn — Shadab Khan"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
                 <FaLinkedin size={20} color="#0A66C2" />
               </a>
-              <a href="https://twitter.com/eligentai" target="_blank" rel="noopener noreferrer" title="X (Twitter)"
+              <a href="https://x.com/shadabbuilds" target="_blank" rel="noopener noreferrer" title="X — @shadabbuilds"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
                 <FaXTwitter size={20} style={{ color: "var(--color-text-primary)" }} />
               </a>
-              <a href="https://instagram.com/eligentai" target="_blank" rel="noopener noreferrer" title="Instagram"
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
-                style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
-                <FaInstagram size={20} color="#E1306C" />
-              </a>
-              <a href="https://youtube.com/@eligentai" target="_blank" rel="noopener noreferrer" title="YouTube"
+              <a href="https://youtube.com/@eligentai" target="_blank" rel="noopener noreferrer" title="YouTube — Eligent AI"
                 className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--color-surface2)", border: "1px solid var(--color-border)" }}>
                 <FaYoutube size={20} color="#FF0000" />
