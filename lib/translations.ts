@@ -272,37 +272,37 @@ export const translations: Record<Locale, Record<string, any>> = {
       sectionLabel: "Who We Are",
       title: "About Eligent AI",
       body1:
-        "Eligent AI is a specialized AI engineering studio focused on AI services for modern businesses — from AI receptionist systems to full automation stacks.",
+        "Eligent AI is an AI engineering studio that designs and deploys production systems for businesses — AI front desk, custom agents, automation, and knowledge assistants.",
       body2Prefix: "We specialize in",
       body2Items: [
         "AI agents",
-        "AI automation",
-        "AI receptionist & WhatsApp AI",
-        "RAG systems & knowledge assistants",
+        "business automation",
+        "AI front desk & reception",
+        "RAG knowledge systems",
       ],
       body2Connector: "and",
       body3:
-        "Our mission is to help companies turn data and knowledge into production AI systems — practical AI agents and automation that answer customers, book appointments, and run workflows reliably.",
+        "We build systems teams can run day to day: answering customers, booking appointments, and automating workflows — with clear ownership and code you keep.",
       founderName: "Shadab Khan",
       founderRole: "Founder & AI Engineer",
       founderBio:
-        "Every AI service project is architected, built, and shipped by the founder directly — one point of contact, full accountability, no handoffs.",
+        "I design, build, and ship each project end to end — from architecture to production — so you always work with one clear owner.",
       founderCta: "Connect on LinkedIn",
       values: [
         {
-          title: "Focused Execution",
+          title: "Focused delivery",
           description:
-            "We work on a small number of AI projects at a time to deliver focused, high-quality engineering — not rushed deliverables.",
+            "A small number of projects at a time, so quality and communication stay high — not a factory of half-finished builds.",
         },
         {
-          title: "Engineering First",
+          title: "Architecture first",
           description:
-            "Every AI agent and automation system starts with rigorous architecture. Robust foundations produce reliable AI services in production.",
+            "Solid design before heavy coding: agents, data flow, integrations, and failure modes thought through early.",
         },
         {
-          title: "AI That Works",
+          title: "Built for production",
           description:
-            "Our goal is systems that actually run in production. We build AI receptionist, support, and agent systems for reliability — not just demos.",
+            "Demos are useful; systems that stay online are the goal. Reliability, handoff, and maintainability are part of the work.",
         },
       ],
     },
@@ -604,7 +604,8 @@ export const translations: Record<Locale, Record<string, any>> = {
       body3: "Nuestra misión es ayudar a las empresas a transformar sus datos y conocimiento en sistemas inteligentes — herramientas prácticas que funcionan de manera confiable en producción.",
       founderName: "Shadab Khan",
       founderRole: "Fundador e Ingeniero de IA",
-      founderBio: "Cada proyecto es diseñado, construido y entregado directamente por el fundador — un solo punto de contacto, responsabilidad total, sin intermediarios.",
+      founderBio:
+        "Diseño, construyo y entrego cada proyecto de punta a punta — de la arquitectura a producción — para que siempre tengas un responsable claro.",
       founderCta: "Conectar en LinkedIn",
       values: [
         {
@@ -897,7 +898,8 @@ export const translations: Record<Locale, Record<string, any>> = {
       body3: "Notre mission est d'aider les entreprises à transformer leurs données et leurs connaissances en systèmes intelligents — des outils pratiques qui fonctionnent de manière fiable en production.",
       founderName: "Shadab Khan",
       founderRole: "Fondateur & Ingénieur IA",
-      founderBio: "Chaque projet est conçu, construit et livré directement par le fondateur — un seul interlocuteur, une responsabilité totale, sans intermédiaires.",
+      founderBio:
+        "Je conçois, construis et livre chaque projet de bout en bout — de l'architecture à la production — pour un interlocuteur unique et clair.",
       founderCta: "Se connecter sur LinkedIn",
       values: [
         {

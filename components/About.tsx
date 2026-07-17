@@ -55,16 +55,17 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="glass-card rounded-2xl p-6 mt-9 flex items-center gap-5 flex-wrap"
             >
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 font-syne font-bold text-[20px]"
+              <img
+                src="/shadab-khan.jpg"
+                alt={`${t.about.founderName}, ${t.about.founderRole}`}
+                width={56}
+                height={56}
+                className="w-14 h-14 rounded-2xl object-cover flex-shrink-0"
                 style={{
-                  background: "linear-gradient(135deg, rgba(34,197,94,0.15), rgba(77,110,255,0.15))",
-                  border: "1px solid rgba(34,197,94,0.3)",
-                  color: "var(--color-mint)",
+                  border: "1px solid var(--color-border)",
+                  background: "var(--color-surface2)",
                 }}
-              >
-                SK
-              </div>
+              />
               <div className="flex-1 min-w-[200px]">
                 <p className="font-syne font-semibold text-[16px]" style={{ color: "var(--color-text-primary)" }}>
                   {t.about.founderName}
@@ -78,7 +79,7 @@ export default function About() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[12.5px] font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[12.5px] font-semibold transition-colors duration-200"
                 style={{ background: "rgba(10,102,194,0.10)", border: "1px solid rgba(10,102,194,0.30)", color: "#0A66C2" }}
               >
                 <FaLinkedin size={14} />
