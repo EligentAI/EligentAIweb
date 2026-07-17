@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, User } from "lucide-react";
+import { existsSync } from "fs";
+import path from "path";
+import { ArrowLeft, Clock } from "lucide-react";
 import BlogLayout from "@/components/blog/BlogLayout";
 import AiFrontDeskVsHumanArticle from "@/components/blog/AiFrontDeskVsHumanArticle";
 import ClinicAiFaqsRagArticle from "@/components/blog/ClinicAiFaqsRagArticle";
 import { formatBlogDate, getAllPosts, getPost } from "@/lib/blog";
 
 const SITE = "https://eligentai.com";
+/** Drop your headshot here: public/shadab-khan.jpg (or .png / .webp). */
+const AUTHOR_PHOTO_CANDIDATES = [
+  "shadab-khan.jpg",
+  "shadab-khan.jpeg",
+  "shadab-khan.png",
+  "shadab-khan.webp",
+];
+
+function getAuthorPhotoSrc(): string | null {
+  for (const file of AUTHOR_PHOTO_CANDIDATES) {
+    if (existsSync(path.join(process.cwd(), "public", file))) {
+      return `/${file}`;
+    }
+  }
+  return null;
+}
 
 type Props = {
   params: Promise<{ slug: string }> | { slug: string };
@@ -66,6 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
   const slug = await resolveSlug(params);
   const post = getPost(slug);
   if (!post) notFound();
+  const authorPhoto = getAuthorPhotoSrc();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -150,16 +169,31 @@ export default async function BlogPostPage({ params }: Props) {
               className="flex items-center gap-3 pt-5"
               style={{ borderTop: "1px solid var(--color-border)" }}
             >
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{
-                  background: "var(--color-surface2)",
-                  border: "1px solid var(--color-border)",
-                  color: "#22C55E",
-                }}
-              >
-                <User size={18} />
-              </div>
+              {authorPhoto ? (
+                <img
+                  src={authorPhoto}
+                  alt={`${post.author}, Founder of Eligent AI`}
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                  style={{
+                    border: "1px solid var(--color-border)",
+                    background: "var(--color-surface2)",
+                  }}
+                />
+              ) : (
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold"
+                  style={{
+                    background: "var(--color-surface2)",
+                    border: "1px solid var(--color-border)",
+                    color: "#22C55E",
+                  }}
+                  aria-hidden
+                >
+                  SK
+                </div>
+              )}
               <div>
                 <p className="text-[14px] font-semibold" style={{ color: "var(--color-text-primary)" }}>
                   {post.author}
