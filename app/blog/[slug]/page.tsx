@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import BlogLayout from "@/components/blog/BlogLayout";
 import AiFrontDeskVsHumanArticle from "@/components/blog/AiFrontDeskVsHumanArticle";
+import ClinicAiFaqsRagArticle from "@/components/blog/ClinicAiFaqsRagArticle";
 import { formatBlogDate, getAllPosts, getPost } from "@/lib/blog";
 
 const SITE = "https://eligentai.com";
@@ -52,6 +53,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function ArticleBody({ slug }: { slug: string }) {
+  if (slug === "clinic-ai-faqs-without-guessing-rag") {
+    return <ClinicAiFaqsRagArticle />;
+  }
   if (slug === "ai-front-desk-vs-human-receptionist") {
     return <AiFrontDeskVsHumanArticle />;
   }
@@ -93,32 +97,24 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="relative pt-28 pb-20">
-        <div
-          className="absolute top-0 left-0 right-0 h-[420px] pointer-events-none"
-          style={{
-            background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${post.coverAccent}18 0%, transparent 65%)`,
-          }}
-        />
-
+      <section className="blog-page relative pt-28 pb-20">
         <div className="relative max-w-3xl mx-auto px-6 lg:px-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[13px] font-medium mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[13px] font-medium mb-8"
             style={{ color: "var(--color-text-muted)" }}
           >
             <ArrowLeft size={14} />
             All articles
           </Link>
 
-          {/* Cover header */}
           <header className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <span
-                className="px-3 py-1 text-[11px] font-semibold rounded-full tracking-wide"
+                className="px-3 py-1 text-[11px] font-semibold rounded-full"
                 style={{
-                  background: `${post.coverAccent}18`,
-                  border: `1px solid ${post.coverAccent}44`,
+                  background: "var(--color-surface2)",
+                  border: "1px solid var(--color-border)",
                   color: post.coverAccent,
                 }}
               >
@@ -137,14 +133,14 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             <h1
-              className="font-syne font-bold text-[32px] sm:text-[42px] leading-[1.12] tracking-[-0.025em] mb-5"
+              className="blog-heading font-bold text-[28px] sm:text-[40px] leading-[1.18] mb-5"
               style={{ color: "var(--color-text-primary)" }}
             >
               {post.title}
             </h1>
 
             <p
-              className="text-[17px] leading-relaxed mb-6"
+              className="text-[16px] sm:text-[17px] leading-relaxed mb-6"
               style={{ color: "var(--color-text-secondary)" }}
             >
               {post.excerpt}
@@ -155,10 +151,10 @@ export default async function BlogPostPage({ params }: Props) {
               style={{ borderTop: "1px solid var(--color-border)" }}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center"
+                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                 style={{
-                  background: "rgba(22,163,74,0.12)",
-                  border: "1px solid rgba(22,163,74,0.3)",
+                  background: "var(--color-surface2)",
+                  border: "1px solid var(--color-border)",
                   color: "#22C55E",
                 }}
               >
@@ -175,41 +171,32 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </header>
 
-          {/* Decorative cover band */}
+          {/* Simple solid cover — no grid overlay on mobile path (desktop keeps subtle solid) */}
           <div
-            className="not-prose mb-12 rounded-2xl overflow-hidden relative h-[180px] sm:h-[220px] flex items-end p-6 sm:p-8"
+            className="blog-cover not-prose mb-12 rounded-2xl relative flex items-end p-6 sm:p-8 min-h-[140px] sm:min-h-[180px]"
             style={{
-              background: `linear-gradient(135deg, ${post.coverAccent}22 0%, var(--color-surface2) 55%, var(--color-surface) 100%)`,
+              background: "var(--color-surface2)",
               border: "1px solid var(--color-border)",
             }}
           >
-            <div
-              className="absolute inset-0 opacity-40"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(128,128,128,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(128,128,128,0.06) 1px, transparent 1px)",
-                backgroundSize: "28px 28px",
-              }}
-            />
             <div className="relative">
               <p
-                className="text-[11px] font-bold uppercase tracking-[0.2em] mb-2"
+                className="text-[11px] font-bold uppercase tracking-widest mb-2"
                 style={{ color: post.coverAccent }}
               >
                 {post.coverLabel}
               </p>
               <p
-                className="font-syne font-bold text-[20px] sm:text-[24px] max-w-md leading-tight"
+                className="blog-heading font-bold text-[18px] sm:text-[22px] max-w-md leading-snug"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                Humans for judgment. AI for coverage.
+                {post.coverTagline}
               </p>
             </div>
           </div>
 
           <ArticleBody slug={post.slug} />
 
-          {/* Footer CTA */}
           <div
             className="mt-16 pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             style={{ borderTop: "1px solid var(--color-border)" }}
@@ -224,7 +211,7 @@ export default async function BlogPostPage({ params }: Props) {
             </Link>
             <Link
               href="/#contact"
-              className="btn-primary inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-[13px] font-syne font-semibold"
+              className="btn-primary inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-[13px] font-semibold"
             >
               Talk to Eligent AI
             </Link>

@@ -5,23 +5,24 @@ import BlogLayout from "@/components/blog/BlogLayout";
 import { formatBlogDate, getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — AI Front Desk, AI Agents & Automation Insights",
+  title: "Blog — AI Front Desk, RAG, AI Agents & Automation",
   description:
-    "Practical guides from Eligent AI: AI front desk vs human receptionist, clinic automation, AI agents, and production AI systems.",
+    "Practical guides from Eligent AI: clinic AI accuracy & RAG, AI front desk vs human receptionist, AI agents, and production AI systems.",
   keywords: [
     "Eligent AI blog",
-    "EligentAI",
+    "RAG AI",
+    "clinic AI chatbot",
     "AI front desk",
     "AI receptionist",
-    "clinic AI",
+    "AI hallucination",
     "AI agents",
     "AI automation",
   ],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Eligent AI Blog — AI Front Desk & Production AI Insights",
+    title: "Eligent AI Blog — AI Front Desk, RAG & Production AI",
     description:
-      "Guides on AI front desk systems, clinic automation, AI agents, and what actually works in production.",
+      "Guides on grounded clinic AI, RAG accuracy, AI front desk systems, and production AI agents.",
     url: "https://eligentai.com/blog",
     type: "website",
   },
@@ -32,19 +33,12 @@ export default function BlogIndexPage() {
 
   return (
     <BlogLayout>
-      <section className="relative pt-28 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(6,182,212,0.10) 0%, transparent 60%)",
-          }}
-        />
-
+      {/* No overflow-hidden / heavy gradients — they tear long titles on Android */}
+      <section className="blog-page relative pt-28 pb-20">
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-12" style={{ background: "rgba(6,182,212,0.6)" }} />
+              <div className="h-px w-12" style={{ background: "#22D3EE" }} />
               <span
                 className="text-[12px] font-medium tracking-widest uppercase"
                 style={{ color: "#22D3EE" }}
@@ -53,17 +47,20 @@ export default function BlogIndexPage() {
               </span>
             </div>
             <h1
-              className="font-syne font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-[-0.02em] mb-4"
+              className="blog-heading font-bold text-[32px] sm:text-[44px] leading-[1.15] mb-4"
               style={{ color: "var(--color-text-primary)" }}
             >
               Insights on AI that works
               <br />
               <span style={{ color: "#22D3EE" }}>in real clinics & businesses</span>
             </h1>
-            <p className="text-[16px] leading-relaxed max-w-2xl" style={{ color: "var(--color-text-secondary)" }}>
-              No fluff. Practical writing from Eligent AI on AI front desk
-              systems, agents, automation, and production deployments — with
-              live demos you can try.
+            <p
+              className="text-[16px] leading-relaxed max-w-2xl"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              Practical writing from Eligent AI on AI front desk systems,
+              grounded RAG answers, agents, automation, and production
+              deployments — with live demos you can try.
             </p>
           </div>
 
@@ -72,7 +69,7 @@ export default function BlogIndexPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-0.5"
+                className="blog-card block rounded-2xl p-6 sm:p-8"
                 style={{
                   background: "var(--color-surface)",
                   border: "1px solid var(--color-border)",
@@ -83,8 +80,8 @@ export default function BlogIndexPage() {
                     <span
                       className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full"
                       style={{
-                        background: "rgba(251,191,36,0.12)",
-                        border: "1px solid rgba(251,191,36,0.35)",
+                        background: "var(--color-surface2)",
+                        border: "1px solid #A16207",
                         color: "#FBBF24",
                       }}
                     >
@@ -95,8 +92,8 @@ export default function BlogIndexPage() {
                   <span
                     className="px-2.5 py-1 text-[11px] font-semibold rounded-full"
                     style={{
-                      background: "rgba(6,182,212,0.12)",
-                      border: "1px solid rgba(6,182,212,0.3)",
+                      background: "var(--color-surface2)",
+                      border: "1px solid var(--color-border)",
                       color: post.coverAccent,
                     }}
                   >
@@ -114,8 +111,9 @@ export default function BlogIndexPage() {
                   </span>
                 </div>
 
+                {/* blog-card-title: no tight tracking / no transform hover on mobile */}
                 <h2
-                  className="font-syne font-bold text-[22px] sm:text-[28px] leading-snug tracking-[-0.02em] mb-3 group-hover:underline underline-offset-4"
+                  className="blog-card-title font-bold text-[20px] sm:text-[26px] leading-snug mb-3"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   {post.title}
@@ -131,10 +129,7 @@ export default function BlogIndexPage() {
                   style={{ color: "#22D3EE" }}
                 >
                   Read article
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
+                  <ArrowRight size={14} />
                 </span>
               </Link>
             ))}

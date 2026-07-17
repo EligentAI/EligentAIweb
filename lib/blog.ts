@@ -11,10 +11,40 @@ export type BlogPost = {
   tags: string[];
   coverAccent: string;
   coverLabel: string;
+  coverTagline: string;
   featured?: boolean;
 };
 
 export const posts: BlogPost[] = [
+  {
+    slug: "clinic-ai-faqs-without-guessing-rag",
+    title: "Clinic AI That Doesn't Guess: 5 FAQs That Must Be Grounded in Your Docs",
+    description:
+      "Why clinic chatbots invent wrong answers, and how RAG-based AI systems ground FAQs in your real documents — OPD timings, fees, insurance, doctors, and policies. From Eligent AI production AI front desk systems.",
+    excerpt:
+      "Patients don't forgive made-up fees or fake insurance answers. Here's how production AI systems stop guessing — and the five clinic FAQs that must be grounded in your own documents.",
+    date: "2026-07-18",
+    readingMinutes: 10,
+    author: "Shadab Khan",
+    category: "AI Systems · RAG",
+    tags: [
+      "RAG",
+      "retrieval augmented generation",
+      "clinic AI",
+      "AI front desk",
+      "AI chatbot accuracy",
+      "AI hallucination",
+      "knowledge base AI",
+      "AI receptionist",
+      "grounded AI answers",
+      "Eligent AI",
+      "custom AI agents",
+    ],
+    coverAccent: "#22C55E",
+    coverLabel: "RAG · Accuracy",
+    coverTagline: "Grounded answers. No guessing.",
+    featured: true,
+  },
   {
     slug: "ai-front-desk-vs-human-receptionist",
     title: "AI Front Desk vs Human Receptionist: What Clinics Actually Need in 2026",
@@ -32,11 +62,11 @@ export const posts: BlogPost[] = [
       "clinic automation",
       "appointment booking",
       "Eligent AI",
-      "EligentAI",
     ],
     coverAccent: "#06B6D4",
     coverLabel: "AI Front Desk",
-    featured: true,
+    coverTagline: "Humans for judgment. AI for coverage.",
+    featured: false,
   },
 ];
 
