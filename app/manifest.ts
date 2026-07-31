@@ -1,13 +1,18 @@
 import type { MetadataRoute } from "next";
 
+/**
+ * Minimal manifest for metadata only.
+ * display: "browser" avoids PWA "Install app" / Add to Home Screen prompts
+ * that look unprofessional on a marketing portfolio site.
+ */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Eligent AI — AI Services & Agents",
+    name: "Eligent AI",
     short_name: "Eligent AI",
     description:
-      "Eligent AI builds AI services, custom AI agents, business automation, and WhatsApp AI receptionist systems.",
+      "Eligent AI builds production AI systems, AI agents, and automation for businesses.",
     start_url: "/",
-    display: "standalone",
+    display: "browser",
     background_color: "#04040A",
     theme_color: "#04040A",
     icons: [
