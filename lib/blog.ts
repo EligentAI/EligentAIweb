@@ -17,6 +17,33 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "add-ai-front-desk-to-clinic-website",
+    title: "How to Add an AI Front Desk to Your Clinic Website (One Line of Code)",
+    description:
+      "Keep your existing clinic website. Add an embeddable AI front desk with one script tag — chat, grounded FAQs, appointment requests, and a staff dashboard. How install and testing work with Eligent AI.",
+    excerpt:
+      "You don't need a full website rebuild. Here's how an embeddable AI front desk works on your current site — one script, your branding, real clinic knowledge, and how to test before patients see it.",
+    date: "2026-07-19",
+    readingMinutes: 8,
+    author: "Shadab Khan",
+    category: "AI Front Desk · Embed",
+    tags: [
+      "AI front desk",
+      "clinic website chatbot",
+      "embed AI chat",
+      "AI receptionist",
+      "AI appointment booking",
+      "hospital chatbot",
+      "clinic AI widget",
+      "Eligent AI",
+      "production AI systems",
+    ],
+    coverAccent: "#06B6D4",
+    coverLabel: "Install · Embed",
+    coverTagline: "One script. Your website. Your clinic.",
+    featured: true,
+  },
+  {
     slug: "clinic-ai-faqs-without-guessing-rag",
     title: "Clinic AI That Doesn't Guess: 5 FAQs That Must Be Grounded in Your Docs",
     description:
@@ -43,7 +70,7 @@ export const posts: BlogPost[] = [
     coverAccent: "#22C55E",
     coverLabel: "RAG · Accuracy",
     coverTagline: "Grounded answers. No guessing.",
-    featured: true,
+    featured: false,
   },
   {
     slug: "ai-front-desk-vs-human-receptionist",

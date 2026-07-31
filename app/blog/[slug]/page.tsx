@@ -7,6 +7,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import BlogLayout from "@/components/blog/BlogLayout";
 import AiFrontDeskVsHumanArticle from "@/components/blog/AiFrontDeskVsHumanArticle";
 import ClinicAiFaqsRagArticle from "@/components/blog/ClinicAiFaqsRagArticle";
+import EmbedAiFrontDeskArticle from "@/components/blog/EmbedAiFrontDeskArticle";
 import { formatBlogDate, getAllPosts, getPost } from "@/lib/blog";
 
 const SITE = "https://eligentai.com";
@@ -71,6 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function ArticleBody({ slug }: { slug: string }) {
+  if (slug === "add-ai-front-desk-to-clinic-website") {
+    return <EmbedAiFrontDeskArticle />;
+  }
   if (slug === "clinic-ai-faqs-without-guessing-rag") {
     return <ClinicAiFaqsRagArticle />;
   }
