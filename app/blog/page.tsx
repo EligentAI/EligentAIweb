@@ -5,7 +5,7 @@ import BlogLayout from "@/components/blog/BlogLayout";
 import { formatBlogDate, getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — AI Front Desk, RAG, AI Agents & Automation",
+  title: "Blog: AI Front Desk, RAG, AI Agents & Automation",
   description:
     "Practical guides from Eligent AI: clinic AI accuracy & RAG, AI front desk vs human receptionist, AI agents, and production AI systems.",
   keywords: [
@@ -20,11 +20,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Eligent AI Blog — AI Front Desk, RAG & Production AI",
+    title: "Eligent AI Blog: AI Front Desk, RAG & Production AI",
     description:
       "Guides on grounded clinic AI, RAG accuracy, AI front desk systems, and production AI agents.",
     url: "https://eligentai.com/blog",
     type: "website",
+    siteName: "Eligent AI",
   },
 };
 

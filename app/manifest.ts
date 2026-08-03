@@ -7,7 +7,7 @@ import type { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Eligent AI",
+    name: "Eligent AI: AI Services & Agents",
     short_name: "Eligent AI",
     description:
       "Eligent AI builds production AI systems, AI agents, and automation for businesses.",

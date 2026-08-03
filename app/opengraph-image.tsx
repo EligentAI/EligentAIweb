@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Eligent AI — AI services, AI agents, automation & AI receptionist for business";
+  "Eligent AI: AI services, AI agents, automation and AI receptionist for business";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -73,7 +73,7 @@ export default function OpengraphImage() {
               color: "transparent",
             }}
           >
-            Automate & Analyze — 24/7
+            Automate & Analyze: 24/7
           </span>
         </div>
 
